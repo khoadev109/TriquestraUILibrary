@@ -1,4 +1,16 @@
 ﻿@page "/input-fields"
+@using Infinity.Blazor.UIControls.InputFields
 
 <PageTitle>Input fields</PageTitle>
 
+<TextBox Value="" PlaceHolder="type your first name" Icon="filter" Title="Your first name" Error="" IconPosition="InputType.Right"/>
+<br/>
+<TextBox Value="Johnny Tri Nguyen" PlaceHolder="type your first name" Icon="filter" Title="Your first name" Error="" IconPosition="InputType.Left"/>
+<br/>
+<TextBox Value="Johnny Tri Nguyen" PlaceHolder="type your first name" Icon="filter" Title="Your first name" Error="This is error message"/>
+<br/>
+<TextBox Value="sdfgsdfgdsfgsgf" PlaceHolder="Your password" Icon="filter" Title="Your first name" Error="" IconPosition="InputType.Left" Password="true"/>
+<br/>
+<TextArea Value="Johnny Tri Nguyen" PlaceHolder="type your first name"  Title="Your first name" Error="This is error message"/>
+<br/>
+<TextArea Value="" PlaceHolder="type your first name"  Title="Your first name" Error="This is error message"/>

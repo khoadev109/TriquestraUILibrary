@@ -20,7 +20,6 @@
   <ItemGroup>
     <Folder Include="ProgressBars\" />
     <Folder Include="Selectors\" />
-    <Folder Include="Tags\" />
     <Folder Include="Icons\" />
   </ItemGroup>
 </Project>

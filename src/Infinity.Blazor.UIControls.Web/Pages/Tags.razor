@@ -1,3 +1,36 @@
 ﻿@page "/tags"
+@using Infinity.Blazor.UIControls.Tags;
+@using Infinity.Blazor.UIControls.Tabs;
+@using Telerik.Blazor.Components
 
 <PageTitle>Tags</PageTitle>
+
+<Tag Label="Test" IsRemove="true" Type="TagType.Primary"/>
+<br/>
+<Tag Label="Test" IsRemove="true" Type="TagType.Success"/>
+<br/>
+<Tag Label="Test" IsRemove="true" Type="TagType.Warning"/>
+<br/>
+<Tag Label="Test" IsRemove="true" Type="TagType.Error"/>
+<br/>
+<Tag Label="Test" />
+<br/>
+<Tag Label="Test"  Type="TagType.Success"/>
+<br/>
+<Tag Label="Test"  Type="TagType.Warning"/>
+<br/>
+<Tag Label="Test"  Type="TagType.Error"/>
+<br/>
+<Tab> 
+    <TabTemplate>
+        <TabStripTab Title="First">
+            First tab content.
+        </TabStripTab>
+        <TabStripTab Title="Second">
+            Second tab content. This tab is disabled and you cannot select it.
+        </TabStripTab>
+        <TabStripTab Title="Third">
+            Third tab content.
+        </TabStripTab>
+    </TabTemplate>
+</Tab>
