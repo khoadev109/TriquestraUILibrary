@@ -11,12 +11,16 @@
                SpriteClass="@SpriteClass"
                ImageUrl="@ImageUrl"
                OnClick="@ClickHandler">
-    @if (IconPosition == IconPosition.Right)
+    @if (string.IsNullOrWhiteSpace(LabelText))
+    {
+        @IconTemplate
+    }
+    else @if (IconPosition == IconPosition.Right)
     {
         <span class="triquestra-button-text-left">@LabelText</span>@IconTemplate
     }
-        else
-        {
+    else
+    {
         @IconTemplate <span class="triquestra-button-text-right">@LabelText</span>
     }
 </TelerikButton>

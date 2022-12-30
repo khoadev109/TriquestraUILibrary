@@ -3,8 +3,7 @@
     public enum IconPosition
 	{
 		Left,
-		Right,
-		Center
+		Right
 	}
 }
 
