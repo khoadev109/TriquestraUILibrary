@@ -1,0 +1,301 @@
+/* TriquestraButton css */
+.k-button.triquestra-button {
+    font-size: 14px;
+    font-style: normal;
+    line-height: 16px;
+    font-weight: 500;
+    font-family: 'Roboto';
+    letter-spacing: 0.0125em;
+    text-transform: uppercase;
+    border-radius: 8px;
+    padding: 12px 24px;
+    outline: none;
+    border: 0px;
+    gap: 10px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+    .k-button.triquestra-button:focus {
+        box-shadow: none;
+    }
+
+    .k-button.triquestra-button > .k-button-text {
+        display: flex;
+        align-items: center;
+    }
+
+    /* SolidButton css */
+    .k-button.triquestra-button.k-button-solid {
+        color: #FFFFFF;
+        background-color: #445D63;
+    }
+
+        .k-button.triquestra-button.k-button-solid:hover {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),#445D63;
+        }
+
+        .k-button.triquestra-button.k-button-solid:active {
+            background-color: rgba(68, 93, 99, 0.6);
+        }
+
+        .k-button.triquestra-button.k-button-solid:disabled {
+            color: #898989;
+            background-color: #DCDCDC;
+        }
+
+
+        /* Icon colors */
+        .k-button.triquestra-button.k-button-solid .triquestra-icon {
+            stroke: #FFFFFF;
+        }
+
+        .k-button.triquestra-button.k-button-solid:disabled .triquestra-icon {
+            stroke: #898989;
+        }
+
+    /* OutlinedButton css */
+    .k-button.triquestra-button.k-button-outline {
+        color: #445D63;
+        border: 1px solid #445D63;
+        background: #FFFFFF;
+    }
+
+        .k-button.triquestra-button.k-button-outline:hover {
+            background: rgba(68, 93, 99, 0.2);
+        }
+
+        .k-button.triquestra-button.k-button-outline:active {
+            background: rgba(220, 220, 220, 0.2);
+        }
+
+        .k-button.triquestra-button.k-button-outline:disabled {
+            color: #898989;
+            border: 1px solid #DCDCDC;
+        }
+
+
+        /* Icon colors */
+        .k-button.triquestra-button.k-button-outline .triquestra-icon {
+            stroke: #445D63;
+        }
+
+        .k-button.triquestra-button.k-button-outline:disabled .triquestra-icon {
+            stroke: #898989;
+        }
+
+    /* FlatButton css */
+    .k-button.triquestra-button.k-button-flat {
+        color: #B00020;
+        background: white;
+        border-radius: 0;
+    }
+
+        .k-button.triquestra-button.k-button-flat .k-button-text {
+            border-bottom: 1px solid #B00020;
+        }
+
+        .k-button.triquestra-button.k-button-flat:hover {
+            color: #EF4444;
+        }
+
+        .k-button.triquestra-button.k-button-flat:active {
+            color: #B60000;
+        }
+
+        .k-button.triquestra-button.k-button-flat:disabled {
+            color: #898989;
+        }
+
+        /* Icon colors */
+        .k-button.triquestra-button.k-button-flat .triquestra-icon {
+            stroke: #B00020;
+        }
+
+        .k-button.triquestra-button.k-button-flat:hover .k-button-text .triquestra-icon {
+            stroke: #EF4444;
+        }
+
+        .k-button.triquestra-button.k-button-flat:active .triquestra-icon {
+            stroke: #B60000;
+        }
+
+        .k-button.triquestra-button.k-button-flat:disabled .k-button-text .triquestra-icon {
+            stroke: #898989;
+        }
+
+.k-button-text .triquestra-button-text-left {
+    padding-right: 10px;
+}
+
+.k-button-text .triquestra-button-text-right {
+    padding-left: 10px;
+}
+
+/* TextBox css */
+.text-box-container {
+    display: flex;
+    flex-direction: column;
+}
+.text-box-clean {
+    border: 0px;
+    box-shadow: none !important;
+    outline: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.0025em;
+    color: #202020;
+    background-color:transparent;
+}
+
+.text-box-container > .text-box-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #DCDCDC;
+    border-radius: 8px;
+    height: 48px;
+    padding: 12px;
+}
+
+.text-box-container > .text-box-input-error {
+    border: 1px solid #B00020;
+}
+
+.text-box-container > .text-box-empty {
+    background-color: #F9F9F9;
+    border: 1px solid #DCDCDC;
+}
+
+.text-box-container > .text-box-not-empty {
+    background-color: #FFFFFF;
+}
+
+.text-box-input:focus-within {
+    border: 1px solid #0062FF;
+}
+
+.text-box-container > .text-box-title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.001em;
+    color: #202020;
+    margin-bottom:8px;
+}
+
+.text-box-container > .text-box-error {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.004em;
+    color: #B00020;
+    margin-top: 8px;
+}
+
+.text-box-container > .text-box-error-hide{
+    display:none;
+}
+
+/* TextArea css */
+.text-area-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-area-clean {
+    border: 0px;
+    box-shadow: none !important;
+    outline: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.0025em;
+    color: #202020;
+    background-color: transparent;
+}
+
+.text-area-container > .text-area-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #DCDCDC;
+    border-radius: 8px;
+    min-height: 48px;
+    padding: 12px;
+}
+
+.text-area-container > .text-area-input-error {
+    border: 1px solid #B00020;
+}
+
+.text-area-container > .text-area-empty {
+    background-color: #F9F9F9;
+    border: 1px solid #DCDCDC;
+}
+
+.text-area-container > .text-area-not-empty {
+    background-color: #FFFFFF;
+}
+
+.text-area-input:focus-within {
+    border: 1px solid #0062FF;
+}
+
+.text-area-container > .text-area-title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.001em;
+    color: #202020;
+    margin-bottom: 8px;
+}
+
+.text-area-container > .text-area-error {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.004em;
+    color: #B00020;
+    margin-top: 8px;
+}
+
+.text-area-container > .text-area-error-hide {
+    display: none;
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    /* TriquestraButton css */
+    .k-button.triquestra-button {
+        border-radius: 4px;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 16px;
+    }
+
+    .text-box-container > .text-box-input {
+        height: 40px;
+    }
+}
+
+/* Icons */
+
+.triquestra-icon {
+    width: 16px;
+    height: 16px;
+}

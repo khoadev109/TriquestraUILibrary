@@ -1,0 +1,22 @@
+﻿<TelerikButton ButtonType="@ButtonType.MapToTelerikButtonType()"
+               FillMode="@FillMode.MapToTelerikFillMode()"
+               Enabled="@Enabled"
+               Class="triquestra-button"
+               ThemeColor="primary"
+               Id="@Id"
+               Title="@Title"
+               Hidden="@Hidden"
+               Form="@FormId"
+               IconClass="@IconClass"
+               SpriteClass="@SpriteClass"
+               ImageUrl="@ImageUrl"
+               OnClick="@ClickHandler">
+    @if (IconPosition == IconPosition.Right)
+    {
+        <span class="triquestra-button-text-left">@LabelText</span>@IconTemplate
+    }
+        else
+        {
+        @IconTemplate <span class="triquestra-button-text-right">@LabelText</span>
+    }
+</TelerikButton>

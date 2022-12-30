@@ -1,0 +1,25 @@
+﻿<div class="text-box-container">
+    <span class="text-box-title">@Title</span>
+    <div class="text-box-input @(Value=="" ? " text-box-empty" : "text-box-not-empty") @(Error == "" ? "":"text-box-input-error")">
+        @if(IconPosition == InputType.Left)
+        {
+           <TelerikIcon Icon="@Icon" />
+        }
+      
+        <TelerikTextBox  
+            Enabled="@Enabled" 
+            Class="text-box-clean" 
+            Id="@Id"
+            OnChange="@ChangeHandle"
+            Password="@Password"
+            Value="@Value"
+            PlaceHolder="@PlaceHolder">
+        </TelerikTextBox>
+
+        @if(IconPosition == InputType.Right)
+        {
+             <TelerikIcon Icon="@Icon" />
+        }
+    </div>
+     <span class="@(Error == "" ? "text-box-error-hide":"text-box-error")">@Error</span>
+</div>

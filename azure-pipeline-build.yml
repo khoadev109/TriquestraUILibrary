@@ -1,0 +1,71 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  - name: 'major'
+    value: $(MAJORVERSION)
+  - name: 'minor'
+    value: $(MINORVERSION)
+  - name: 'patch'
+    value: $[counter(variables['minor'], 0)] #this will get reset when minor gets bumped. The number after Counter is the seed number (in my case, I started at 1).
+  - name: 'packageVersion'
+    value: '$(major).$(minor).$(patch)'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Use .NET Core sdk 6.0.x'
+  inputs:
+    packageType: 'sdk'
+    version: 6.0.x
+    includePreviewVersions: false
+
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: '>=4.0.0-0'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Restore nuget packages'
+  inputs:
+    command: 'restore'
+    projects: '**/src/Infinity.Blazor.UIControls/Infinity.Blazor.UIControls.csproj'
+    feedsToUse: 'config'
+    nugetConfigPath: '$(Build.SourcesDirectory)/NuGet.config'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build UI Library'
+  inputs:
+    command: 'build'
+    projects: '**/src/Infinity.Blazor.UIControls/Infinity.Blazor.UIControls.csproj'
+    arguments: '-c Release'
+
+
+- task: DotNetCoreCLI@2
+  displayName: 'Pack UI Library'
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/src/Infinity.Blazor.UIControls/Infinity.Blazor.UIControls.csproj'
+    configuration: 'Release'
+    nobuild: true
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'packageVersion'
+
+- task: UniversalPackages@0
+  displayName: 'Publish to Azure Artifact feed'
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: 'fa1284e8-11e7-413e-8783-83093061feef/3c8e4ef0-df72-400f-ac6e-0e088111a7d4'
+    publishPackageMetadata: false
+    vstsFeedPackagePublish: 'infinity.blazor.uicontrols'
+    versionOption: 'custom'
+    versionPublish: '$(packageVersion)'
+    packagePublishDescription: 'Contains Blazor UI controls styled for the Infinity project like buttons, tags, dropdowns, etc'

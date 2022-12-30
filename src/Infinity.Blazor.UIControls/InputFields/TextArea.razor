@@ -1,0 +1,24 @@
+﻿<div class="text-area-container">
+    <span class="text-area-title">@Title</span>
+    <div class="text-area-input @(Value=="" ? " text-area-empty" : "text-area-not-empty") @(Error == "" ? "":"text-area-input-error")">
+        @if(IconPosition == InputType.Left)
+        {
+           <TelerikIcon Icon="@Icon" />
+        }
+      
+        <TelerikTextArea  
+            Enabled="@Enabled" 
+            Class="text-area-clean" 
+            Id="@Id"
+            OnChange="@ChangeHandle"
+            Value="@Value"
+            PlaceHolder="@PlaceHolder">
+        </TelerikTextArea>
+
+        @if(IconPosition == InputType.Right)
+        {
+             <TelerikIcon Icon="@Icon" />
+        }
+    </div>
+     <span class="@(Error == "" ? "text-area-error-hide":"text-area-error")">@Error</span>
+</div>

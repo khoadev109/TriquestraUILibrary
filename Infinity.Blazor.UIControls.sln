@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Blazor.UIControls", "src\Infinity.Blazor.UIControls\Infinity.Blazor.UIControls.csproj", "{1D2DB5BA-EC28-48DC-BA63-558CB3F76895}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity.Blazor.UIControls.Web", "src\Infinity.Blazor.UIControls.Web\Infinity.Blazor.UIControls.Web.csproj", "{949920EB-0D59-4514-BE36-458874667A60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D2DB5BA-EC28-48DC-BA63-558CB3F76895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D2DB5BA-EC28-48DC-BA63-558CB3F76895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D2DB5BA-EC28-48DC-BA63-558CB3F76895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D2DB5BA-EC28-48DC-BA63-558CB3F76895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{949920EB-0D59-4514-BE36-458874667A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949920EB-0D59-4514-BE36-458874667A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949920EB-0D59-4514-BE36-458874667A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949920EB-0D59-4514-BE36-458874667A60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A5A17C6-0201-4470-8F90-40E2242B43A9}
+	EndGlobalSection
+EndGlobal

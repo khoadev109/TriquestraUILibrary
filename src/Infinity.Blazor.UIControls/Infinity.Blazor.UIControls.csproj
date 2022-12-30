@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Description>Blazor UI Controls for Infinity project</Description>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+	
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.12" />
+    <PackageReference Include="Telerik.UI.for.Blazor" Version="3.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ProgressBars\" />
+    <Folder Include="Selectors\" />
+    <Folder Include="Tags\" />
+    <Folder Include="Icons\" />
+  </ItemGroup>
+</Project>
