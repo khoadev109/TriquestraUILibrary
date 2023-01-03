@@ -1,4 +1,6 @@
-﻿<TelerikButton ButtonType="@ButtonType.MapToTelerikButtonType()"
+﻿@using Infinity.Blazor.UIControls.Icons
+
+<TelerikButton ButtonType="@ButtonType.MapToTelerikButtonType()"
                FillMode="@FillMode.MapToTelerikFillMode()"
                Enabled="@Enabled"
                Class="triquestra-button"
@@ -16,11 +18,11 @@
         @IconTemplate
     }
     else @if (IconPosition == IconPosition.Right)
-    {
-        <span class="triquestra-button-text-left">@LabelText</span>@IconTemplate
-    }
-    else
-    {
-        @IconTemplate <span class="triquestra-button-text-right">@LabelText</span>
-    }
+{
+<span class="triquestra-button-text-left">@LabelText</span>@IconTemplate
+}
+else
+{
+@IconTemplate <span class="triquestra-button-text-right">@LabelText</span>
+}
 </TelerikButton>

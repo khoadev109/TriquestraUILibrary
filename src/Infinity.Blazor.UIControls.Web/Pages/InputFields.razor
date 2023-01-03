@@ -2,3 +2,42 @@
 
 <PageTitle>Input fields</PageTitle>
 
+@using System.ComponentModel.DataAnnotations
+@using Infinity.Blazor.UIControls.InputFields
+
+<TextBox PlaceHolder="Placeholder" Width="500px" />
+<br />
+<TextBox PlaceHolder="Placeholder" Width="500px" LabelText="Description" BindValue="@theTbValue" />
+
+<br />
+<EditForm Model="@person">
+    <DataAnnotationsValidator />
+
+    <TextBox LabelText="Name:" BindValue="@person.Name" PlaceHolder="Input here" ValidateOn="ValidationEvent.Change"></TextBox>
+
+    @*Change later to put validation message inside textbox control*@
+
+    @*<Telerik.Blazor.Components.TelerikTextBox Class="triquestra-input-text"
+                    PlaceHolder="Input here"
+                    @bind-Value="@Weight">
+    </Telerik.Blazor.Components.TelerikTextBox>*@
+
+    <ValidationMessage For="@(() => person.Name)"></ValidationMessage>
+
+    <br />
+    <Telerik.Blazor.Components.TelerikButton ButtonType="@Telerik.Blazor.ButtonType.Submit">Submit</Telerik.Blazor.Components.TelerikButton>
+</EditForm>
+
+@code {
+    Person person { get; set; } = new Person();
+
+    string theTbValue { get; set; } = "lorem ipsum";
+
+    public class Person
+    {
+        [Required(ErrorMessage = "Enter a name")]
+        [MinLength(3, ErrorMessage = "That name is too short")]
+        [StringLength(10, ErrorMessage = "That name is too long")]
+        public string Name { get; set; }
+    }
+}

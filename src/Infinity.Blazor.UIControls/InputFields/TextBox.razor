@@ -1,25 +1,22 @@
-﻿<div class="text-box-container">
-    <span class="text-box-title">@Title</span>
-    <div class="text-box-input @(Value=="" ? " text-box-empty" : "text-box-not-empty") @(Error == "" ? "":"text-box-input-error")">
-        @if(IconPosition == InputType.Left)
-        {
-           <TelerikIcon Icon="@Icon" />
-        }
-      
-        <TelerikTextBox  
-            Enabled="@Enabled" 
-            Class="text-box-clean" 
-            Id="@Id"
-            OnChange="@ChangeHandle"
-            Password="@Password"
-            Value="@Value"
-            PlaceHolder="@PlaceHolder">
-        </TelerikTextBox>
+﻿@using System.ComponentModel.DataAnnotations
 
-        @if(IconPosition == InputType.Right)
-        {
-             <TelerikIcon Icon="@Icon" />
-        }
-    </div>
-     <span class="@(Error == "" ? "text-box-error-hide":"text-box-error")">@Error</span>
+<div class="triquestra-input-text-container">
+    @if (!string.IsNullOrWhiteSpace(LabelText))
+    {
+        <span class="triquestra-input-text-title">@LabelText</span>
+    }
+    <TelerikTextBox ValidateOn="@ValidateOn.MapToTelerikValidationEvent()"
+                    Enabled="@Enabled"
+                    Class="triquestra-input-text"
+                    Id="@Id"
+                    Title="@Title"
+                    TabIndex="@TabIndex"
+                    Password="@Password"
+                    PlaceHolder="@PlaceHolder"
+                    Width="@Width"
+                    @bind-Value="@BindValue"
+                    OnChange="@OnChangeHandler"
+                    OnBlur="@OnBlurHandler">
+    </TelerikTextBox>
+    <ValidationMessage For="@(() => BindValue)"></ValidationMessage>
 </div>

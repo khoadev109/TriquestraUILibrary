@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Infinity.Blazor.UIControls.Icons;
+using Microsoft.AspNetCore.Components;
 
 namespace Infinity.Blazor.UIControls.Buttons;
 

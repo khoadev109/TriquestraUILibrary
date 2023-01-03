@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Linq.Expressions;
+using Infinity.Blazor.UIControls.Icons;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
+using Telerik.Blazor;
 
 namespace Infinity.Blazor.UIControls.InputFields;
 
@@ -17,7 +22,10 @@ partial class TextBox
     public bool Enabled { get; set; } = true;
 
     [Parameter]
-    public EventCallback ChangeHandle { get; set; }
+    public EventCallback OnChangeHandler { get; set; }
+
+    [Parameter]
+    public EventCallback OnBlurHandler { get; set; }
 
     [Parameter]
     public string LabelText { get; set; }
@@ -26,7 +34,19 @@ partial class TextBox
     public string PlaceHolder { get; set; }
 
     [Parameter]
-    public string Value { get; set; }
+    public int? TabIndex { get; set; }
+
+    [Parameter]
+    public ValidationEvent ValidateOn { get; set; }
+
+    [Parameter]
+    public RenderFragment<string> ValidationMessage { get; set; }
+
+    [Parameter]
+    public string Width { get; set; }
+
+    [Parameter]
+    public string BindValue { get; set; }
 
     [Parameter]
     public string Error { get; set; }
@@ -38,5 +58,5 @@ partial class TextBox
     public string Icon { get; set; }
 
     [Parameter]
-    public InputType IconPosition { get; set; }
+    public IconPosition IconPosition { get; set; }
 }
