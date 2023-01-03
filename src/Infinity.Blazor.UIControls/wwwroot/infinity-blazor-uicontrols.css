@@ -145,14 +145,16 @@
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.001em;
+    position: relative;
 }
 
-    .triquestra-input-text-container .triquestra-input-text-title {
+    .triquestra-input-text-container .triquestra-input-text-label {
         color: #202020;
         font-weight: 500;
     }
 
-    .triquestra-input-text-container .k-textbox.triquestra-input-text input {
+    .triquestra-input-text-container .k-textbox.triquestra-input-text input,
+    .triquestra-input-text-container .k-textarea.triquestra-input-text textarea {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -166,33 +168,61 @@
         width: inherit;
     }
 
-        .triquestra-input-text-container .k-textbox.triquestra-input-text input:active,
-        .triquestra-input-text-container .k-textbox.triquestra-input-text input:focus {
-            color: #202020;
-            background: white;
-            border: 1px solid #0062FF;
-        }
+    .triquestra-input-text-container .k-textarea.triquestra-input-text textarea {
+        padding-left: 26px;
+    }
 
-        .triquestra-input-text-container .k-textbox.triquestra-input-text input.error {
-            color: #202020;
-            background: white;
-            border: 1px solid #B00020;
-        }
+    .triquestra-input-text-container:has(.triquestra-input-text-icon-left) .k-textbox.triquestra-input-text input {
+        padding-left: calc(12px + 24px);
+    }
 
-    .triquestra-input-text-container + .k-invalid-msg {
+    .triquestra-input-text-container:has(.triquestra-input-text-icon-right) .k-textbox.triquestra-input-text input {
+        padding-right: calc(12px + 24px);
+    }
+
+    .triquestra-input-text-container .triquestra-input-text-icon-left,
+    .triquestra-input-text-container .triquestra-input-text-icon-right {
+        position: absolute;
+        z-index: 1;
+        top: 12px;
+    }
+
+    .triquestra-input-text-container .triquestra-input-text-icon-left {
+        left: 13px;
+    }
+
+    .triquestra-input-text-container .triquestra-input-text-icon-right {
+        right: 13px;
+    }
+
+    .triquestra-input-text-container .k-textbox.triquestra-input-text input:active,
+    .triquestra-input-text-container .k-textbox.triquestra-input-text input:focus,
+    .triquestra-input-text-container .k-textarea.triquestra-input-text textarea:active,
+    .triquestra-input-text-container .k-textarea.triquestra-input-text textarea:focus {
+        color: #202020;
+        background: white;
+        border: 1px solid #0062FF;
+    }
+
+    .triquestra-input-text-container:has(+ .k-invalid-msg) .k-textbox.triquestra-input-text input,
+    .triquestra-input-text-container:has(+ .validation-message) .k-textbox.triquestra-input-text input,
+    .triquestra-input-text-container:has(+ .k-invalid-msg) .k-textarea.triquestra-input-text textarea,
+    .triquestra-input-text-container:has(+ .validation-message) .k-textarea.triquestra-input-text textarea {
+        color: #202020;
+        background: white;
+        border: 1px solid #B00020;
+    }
+
+    .triquestra-input-text-container + .k-invalid-msg,
+    .triquestra-input-text-container + .validation-message {
         color: #B00020;
         font-weight: 400;
         font-size: 12px;
         line-height: 14px;
         letter-spacing: 0.004em;
+        margin-top: 12px;
     }
 
-    .triquestra-input-text-container:has(+ .k-invalid-msg) .k-textbox.triquestra-input-text input {
-        background: white;
-        border: 1px solid #B00020;
-    }
-
-    /* TextArea css */
     /* Mobile */
     @media only screen and (max-width: 600px) {
         /* TriquestraButton css */

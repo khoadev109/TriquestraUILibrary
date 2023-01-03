@@ -3,29 +3,66 @@
 <PageTitle>Input fields</PageTitle>
 
 @using System.ComponentModel.DataAnnotations
+@using Telerik.Blazor.Components
 @using Infinity.Blazor.UIControls.InputFields
+@using Infinity.Blazor.UIControls.Icons
 
-<TextBox PlaceHolder="Placeholder" Width="500px" />
-<br />
-<TextBox PlaceHolder="Placeholder" Width="500px" LabelText="Description" BindValue="@theTbValue" />
+<h2>Input Text</h2>
+
+<TextBox PlaceHolder="Input here" Width="500px" />
 
 <br />
+
+<TextBox PlaceHolder="Input here" Width="500px">
+    <IconTemplate>
+        <BarcodeScannerIcon />
+    </IconTemplate>
+</TextBox>
+
+<br />
+
+<TextBox PlaceHolder="Input here" Width="500px" IconPosition="IconPosition.Right">
+    <IconTemplate>
+        <BarcodeScannerIcon />
+    </IconTemplate>
+</TextBox>
+
+<br />
+
 <EditForm Model="@person">
     <DataAnnotationsValidator />
 
-    <TextBox LabelText="Name:" BindValue="@person.Name" PlaceHolder="Input here" ValidateOn="ValidationEvent.Change"></TextBox>
-
-    @*Change later to put validation message inside textbox control*@
-
-    @*<Telerik.Blazor.Components.TelerikTextBox Class="triquestra-input-text"
-                    PlaceHolder="Input here"
-                    @bind-Value="@Weight">
-    </Telerik.Blazor.Components.TelerikTextBox>*@
-
+    <TextBox LabelText="Name:" PlaceHolder="Input here" @bind-Value="@person.Name"></TextBox>
     <ValidationMessage For="@(() => person.Name)"></ValidationMessage>
 
     <br />
-    <Telerik.Blazor.Components.TelerikButton ButtonType="@Telerik.Blazor.ButtonType.Submit">Submit</Telerik.Blazor.Components.TelerikButton>
+
+    <TextBox LabelText="Address:" PlaceHolder="Input here" @bind-Value="@person.Address"></TextBox>
+    <TelerikValidationMessage For="@(() => person.Address)"></TelerikValidationMessage>
+
+    <br />
+    <br />
+    <TelerikButton ButtonType="@Telerik.Blazor.ButtonType.Submit">Submit</TelerikButton>
+</EditForm>
+
+<br />
+
+<h2>Input Text Area</h2>
+
+<EditForm Model="@person">
+    <DataAnnotationsValidator />
+
+    <TextArea LabelText="Name:" PlaceHolder="Input here" @bind-Value="@person.Name" Width="500px"></TextArea>
+    <ValidationMessage For="@(() => person.Name)"></ValidationMessage>
+
+    <br />
+
+    <TextArea LabelText="Address:" PlaceHolder="Input here" @bind-Value="@person.Address"></TextArea>
+    <TelerikValidationMessage For="@(() => person.Address)"></TelerikValidationMessage>
+
+    <br />
+    <br />
+    <TelerikButton ButtonType="@Telerik.Blazor.ButtonType.Submit">Submit</TelerikButton>
 </EditForm>
 
 @code {
@@ -39,5 +76,8 @@
         [MinLength(3, ErrorMessage = "That name is too short")]
         [StringLength(10, ErrorMessage = "That name is too long")]
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "Enter an address")]
+        public string Address { get; set; }
     }
 }

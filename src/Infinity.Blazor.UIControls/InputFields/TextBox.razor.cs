@@ -1,9 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 using Infinity.Blazor.UIControls.Icons;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Forms;
-using Telerik.Blazor;
 
 namespace Infinity.Blazor.UIControls.InputFields;
 
@@ -22,12 +19,6 @@ partial class TextBox
     public bool Enabled { get; set; } = true;
 
     [Parameter]
-    public EventCallback OnChangeHandler { get; set; }
-
-    [Parameter]
-    public EventCallback OnBlurHandler { get; set; }
-
-    [Parameter]
     public string LabelText { get; set; }
 
     [Parameter]
@@ -37,26 +28,50 @@ partial class TextBox
     public int? TabIndex { get; set; }
 
     [Parameter]
-    public ValidationEvent ValidateOn { get; set; }
-
-    [Parameter]
-    public RenderFragment<string> ValidationMessage { get; set; }
-
-    [Parameter]
     public string Width { get; set; }
 
-    [Parameter]
-    public string BindValue { get; set; }
+    private string _value;
 
     [Parameter]
-    public string Error { get; set; }
+    public string Value
+    {
+        get => _value;
+        set
+        {
+            if (!EqualityComparer<string>.Default.Equals(value, _value))
+            {
+                _value = value;
+                ValueChanged.InvokeAsync(value);
+            }
+        }
+    }
+
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
+
+    [Parameter]
+    public Expression<Func<string>> ValueExpression { get; set; }
+
+    [Parameter]
+    public ValidationEvent ValidateOn { get; set; }
 
     [Parameter]
     public bool Password { get; set; }
 
     [Parameter]
-    public string Icon { get; set; }
+    public IconPosition IconPosition { get; set; }
+
+    public string IconClass => "triquestra-icon " +
+            (IconPosition == IconPosition.Right
+                ? "triquestra-input-text-icon-right"
+                : "triquestra-input-text-icon-left");
 
     [Parameter]
-    public IconPosition IconPosition { get; set; }
+    public RenderFragment IconTemplate { get; set; }
+
+    [Parameter]
+    public EventCallback OnChangeHandler { get; set; }
+
+    [Parameter]
+    public EventCallback OnBlurHandler { get; set; }
 }

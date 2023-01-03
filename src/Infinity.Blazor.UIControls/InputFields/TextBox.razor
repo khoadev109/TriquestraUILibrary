@@ -1,10 +1,16 @@
-﻿@using System.ComponentModel.DataAnnotations
+﻿@using Infinity.Blazor.UIControls.Icons
 
-<div class="triquestra-input-text-container">
+<span class="triquestra-input-text-container" style="width:@Width">
     @if (!string.IsNullOrWhiteSpace(LabelText))
     {
-        <span class="triquestra-input-text-title">@LabelText</span>
+        <span class="triquestra-input-text-label">@LabelText</span>
     }
+
+    @if (IconTemplate != null)
+    {
+        <span class="@IconClass">@IconTemplate</span>
+    }
+
     <TelerikTextBox ValidateOn="@ValidateOn.MapToTelerikValidationEvent()"
                     Enabled="@Enabled"
                     Class="triquestra-input-text"
@@ -14,9 +20,9 @@
                     Password="@Password"
                     PlaceHolder="@PlaceHolder"
                     Width="@Width"
-                    @bind-Value="@BindValue"
+                    Value="@Value"
+                    ValueChanged="ValueChanged"
+                    ValueExpression="@ValueExpression"
                     OnChange="@OnChangeHandler"
-                    OnBlur="@OnBlurHandler">
-    </TelerikTextBox>
-    <ValidationMessage For="@(() => BindValue)"></ValidationMessage>
-</div>
+                    OnBlur="@OnBlurHandler" />
+</span>

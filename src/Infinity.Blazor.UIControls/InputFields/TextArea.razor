@@ -1,24 +1,23 @@
-﻿<div class="text-area-container">
-    <span class="text-area-title">@Title</span>
-    <div class="text-area-input @(Value=="" ? " text-area-empty" : "text-area-not-empty") @(Error == "" ? "":"text-area-input-error")">
-        @if(IconPosition == InputType.Left)
-        {
-           <TelerikIcon Icon="@Icon" />
-        }
-      
-        <TelerikTextArea  
-            Enabled="@Enabled" 
-            Class="text-area-clean" 
-            Id="@Id"
-            OnChange="@ChangeHandle"
-            Value="@Value"
-            PlaceHolder="@PlaceHolder">
-        </TelerikTextArea>
+﻿@using Infinity.Blazor.UIControls.Icons
 
-        @if(IconPosition == InputType.Right)
-        {
-             <TelerikIcon Icon="@Icon" />
-        }
-    </div>
-     <span class="@(Error == "" ? "text-area-error-hide":"text-area-error")">@Error</span>
-</div>
+<span class="triquestra-input-text-container" style="width:@Width">
+    @if (!string.IsNullOrWhiteSpace(LabelText))
+    {
+        <span class="triquestra-input-text-label">@LabelText</span>
+    }
+
+    <TelerikTextArea ValidateOn="@ValidateOn.MapToTelerikValidationEvent()"
+                    Enabled="@Enabled"
+                    Class="triquestra-input-text"
+                    Id="@Id"
+                    Title="@Title"
+                    TabIndex="@TabIndex"
+                    PlaceHolder="@PlaceHolder"
+                    AutoSize="@AutoSize"
+                    Width="@Width"
+                    Value="@Value"
+                    ValueChanged="ValueChanged"
+                    ValueExpression="@ValueExpression"
+                    OnChange="@OnChangeHandler"
+                    OnBlur="@OnBlurHandler" />
+</span>
