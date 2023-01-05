@@ -639,6 +639,29 @@
     writing-mode: vertical-lr;
 }
 
+
+/*Progress Bar Line*/
+.triquestra-progress-bar-line {
+    height: 4px;
+    background: #DCDCDC;
+    border-radius: 2.5px;
+}
+
+.triquestra-progress-bar-line .k-progress-status {
+    display: none;
+}
+
+.triquestra-progress-bar-line-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    color: #898989;
+}
+/*Progress Bar Line*/
+
 /* Icons */
 .triquestra-icon {
     width: 16px;
