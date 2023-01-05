@@ -13,7 +13,7 @@ partial class Tag
     [Parameter]
     public TagType TagType { get; set; }
 
-    public Dictionary<TagType, string> Types => new Dictionary<TagType, string>
+    public Dictionary<TagType, string> TagTypesCssClasses => new Dictionary<TagType, string>
     {
         [TagType.Primary] = "triquestra-tag-primary",
         [TagType.Success] = "triquestra-tag-success",
@@ -23,7 +23,7 @@ partial class Tag
 
     public string GetTagTypeCssClass()
     {
-        Types.TryGetValue(TagType, out string cssClass);
+        TagTypesCssClasses.TryGetValue(TagType, out string cssClass);
 
         return cssClass;
     }

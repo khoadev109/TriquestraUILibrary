@@ -547,96 +547,47 @@
 
 /* Progress Bar */
 
-.k-progressbar.triquestra-progress-bar {
-    display: inline-grid;
-    vertical-align: middle;
+.triquestra-progress-bar-container {
     position: relative;
-    border-color: #DCDCDC;
-    /*    border: 12px solid #DCDCDC;*/
-    color: #B00020;
-    background-color: #ebebeb;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 33px;
-}
-
-    .k-progressbar.triquestra-progress-bar.k-progressbar-vertical {
-        margin-left: 1rem;
-    }
-
-    .k-progressbar.triquestra-progress-bar .k-progress-status-wrap {
-        flex-direction: column-reverse;
-        justify-content: flex-end;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-        grid-column: 1 / -1;
-        grid-row: 1 / -1;
-    }
-
-    .k-progressbar.triquestra-progress-bar .k- {
-        flex-direction: column-reverse;
-        justify-content: flex-end;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-        grid-column: 1 / -1;
-        grid-row: 1 / -1;
-    }
-
-.k-progress-status {
-    padding: 0 0.5em;
-    -webkit-padding-before: 0;
-    padding-block-start: 0;
-    -webkit-padding-after: 0;
-    padding-block-end: 0;
-    -webkit-padding-start: 0.5em;
-    padding-inline-start: 0.5em;
-    -webkit-padding-end: 0.5em;
-    padding-inline-end: 0.5em;
-    min-width: 10px;
+    margin: 4px;
+    float: left;
     text-align: center;
-    display: inline-block;
-    white-space: nowrap;
 }
 
-.k-progressbar .k-selected {
-    border-color: #116b9e;
-    color: white;
-    background-color: #1274AC;
-}
-
-.k-progressbar > .k-selected {
-    border-width: 0;
-    border-style: solid;
-    display: flex;
+.triquestra-progress-bar-wrapper {
+    position: relative;
     overflow: hidden;
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
+    width: 90px;
+    height: 45px;
+    margin-bottom: -14px;
 }
 
-.k-progressbar-vertical > .k-selected {
-    height: 0;
-    height: calc(var( --kendo-progressbar-progress, 0 )*1%);
-    flex-direction: column-reverse;
-    align-self: flex-end;
-    align-items: flex-end;
+.triquestra-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 12px solid #DCDCDC;
+    transform: rotate(106.2deg);
 }
 
-    .k-progressbar-vertical > .k-selected > .k-progress-status-wrap {
-        height: calc(100%*(100/var( --kendo-progressbar-progress, 1 )));
-    }
+.triquestra-progress-bar-value {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 33px;
+    text-align: center;
+    padding-top: 15%;
+}
 
-.k-progressbar-vertical .k-progress-status {
-    writing-mode: vertical-lr;
+.k-selected {
+    display: none;
 }
 
 /* Icons */
-.triquestra-icon {
+.triquestra-progress-bar-container .triquestra-icon {
     width: 16px;
     height: 16px;
 }
