@@ -1,12 +1,12 @@
 ﻿@using Infinity.Blazor.UIControls.Icons
 
 @if (!Removed)
-    {
-<div class="triquestra-tag-container @(Type == TagType.Primary ? "triquestra-tag-primary" : Type == TagType.Success ? "triquestra-tag-success" : Type == TagType.Warning ? "triquestra-tag-warning" : "triquestra-tag-error")">
-    <span class="triquestra-tag-label">@Label</span>
-    @if (CanRemove)
+{
+    <div class="triquestra-tag-container @GetTagTypeCssClass()">
+        <span class="triquestra-tag-label">@Label</span>
+        @if (CanRemove)
         {
-        <CloseIcon Color="@(Type == TagType.Warning ? "black" : "white")" OnRemove="@RemoveIcon" />
+            <CloseIcon Color="@(TagType == TagType.Warning ? "black" : "white")" OnRemove="@RemoveIcon" />
         }
-</div>
-    }
+    </div>
+}

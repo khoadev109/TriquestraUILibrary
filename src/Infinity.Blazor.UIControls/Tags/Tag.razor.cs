@@ -11,7 +11,22 @@ partial class Tag
     public bool CanRemove { get; set; }
 
     [Parameter]
-    public TagType Type { get; set; }
+    public TagType TagType { get; set; }
+
+    public Dictionary<TagType, string> Types => new Dictionary<TagType, string>
+    {
+        [TagType.Primary] = "triquestra-tag-primary",
+        [TagType.Success] = "triquestra-tag-success",
+        [TagType.Warning] = "triquestra-tag-warning",
+        [TagType.Error] = "triquestra-tag-error",
+    };
+
+    public string GetTagTypeCssClass()
+    {
+        Types.TryGetValue(TagType, out string cssClass);
+
+        return cssClass;
+    }
 
     public bool Removed { get; set; }
 
