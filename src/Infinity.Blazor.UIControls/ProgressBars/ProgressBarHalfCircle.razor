@@ -1,0 +1,20 @@
+﻿<span style="display: block; overflow: hidden; height: 61px;">
+    <TelerikProgressBar Class="triquestra-progress-bar-container"
+                        Value="@Value"
+                        Max="@Max">
+        <ProgressBarLabel Visible="true">
+            <Template>
+                <div class="triquestra-progress-bar-wrapper">
+                    <div class="triquestra-progress-bar"
+                         style="transform: rotate(@GetBarRorateDegree(context.Value));
+                                 border-bottom-color: @ColorCssClass;
+                                 border-right-color: @ColorCssClass;">
+                    </div>
+                    <div class="triquestra-progress-bar-value" style="color: @ColorCssClass;">
+                        @GetRoundedPercentageValue(context.Value)
+                    </div>
+                </div>
+            </Template>
+        </ProgressBarLabel>
+    </TelerikProgressBar>
+</span>

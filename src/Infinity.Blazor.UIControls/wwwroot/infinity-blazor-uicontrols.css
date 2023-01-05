@@ -549,9 +549,10 @@
 }
 
 
-/* Progress Bar */
+/* Progress Bar Half Circle */
 
-.triquestra-progress-bar-container {
+.k-progressbar.triquestra-progress-bar-container {
+    display: block;
     position: relative;
     margin: 4px;
     float: left;
@@ -586,32 +587,50 @@
     padding-top: 15%;
 }
 
-.k-selected {
+.triquestra-progress-bar-container .k-selected {
     display: none;
 }
 
 
-/*Progress Bar Line*/
+/* Progress Bar Line */
+
+.k-progressbar.triquestra-progress-bar-line-container {
+    width: 500px;
+}
+
 .triquestra-progress-bar-line {
+    display: flex;
+    align-items: center;
+    gap: 7.44px;
+}
+
+.triquestra-progress-bar-line-wrapper {
     height: 4px;
     background: #DCDCDC;
     border-radius: 2.5px;
+    position: relative;
+    width: 100%;
 }
 
-.triquestra-progress-bar-line .k-progress-status {
-    display: none;
+.triquestra-progress-bar-line-progressed {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.triquestra-progress-bar-line-text {
+.triquestra-progress-bar-line-value {
     font-family: 'Inter';
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
     text-align: right;
     color: #898989;
 }
-/*Progress Bar Line*/
+
+.triquestra-progress-bar-line-container .k-selected {
+    display: none;
+}
+
 
 /* Icons */
 .triquestra-progress-bar-container .triquestra-icon {

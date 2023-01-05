@@ -1,8 +1,20 @@
-﻿<span>
-    <TelerikProgressBar Orientation="@Orientation.MapToTelerikProgressBarOrientation()"
-                        Class="triquestra-progress-bar-line"
-                        Value="@Value"
-                        Max="@Max">
-    </TelerikProgressBar>
-    <span class="triquestra-progress-bar-line-text">@Value%</span> 
-</span>
+﻿<TelerikProgressBar Class="triquestra-progress-bar-line-container"
+                    Value="@Value"
+                    Max="@Max">
+    <ProgressBarLabel Visible="true">
+        <Template>
+            <div class="triquestra-progress-bar-line">
+                <div class="triquestra-progress-bar-line-wrapper">
+                    <div class="triquestra-progress-bar-line-progressed"
+                         style="background-color: @ColorCssClass;
+                                border: 2px solid @ColorCssClass;
+                                width: @GetRoundedPercentageValue(context.Value)">
+                    </div>
+                </div>
+                <div class="triquestra-progress-bar-line-value">
+                    @context.Value%
+                </div>
+            </div>
+        </Template>
+    </ProgressBarLabel>
+</TelerikProgressBar>
