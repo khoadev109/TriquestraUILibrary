@@ -551,7 +551,13 @@
 
 /* Progress Bar Half Circle */
 
-.k-progressbar.triquestra-progress-bar-container {
+.triquestra-progress-bar-container {
+    display: block;
+    overflow: hidden;
+    height: 61px;
+}
+
+.k-progressbar.triquestra-progress-bar {
     display: block;
     position: relative;
     margin: 4px;
@@ -565,9 +571,11 @@
     width: 90px;
     height: 45px;
     margin-bottom: -14px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
-.triquestra-progress-bar {
+.triquestra-progress-bar-progressed {
     position: absolute;
     top: 0;
     left: 0;
@@ -576,7 +584,6 @@
     border-radius: 50%;
     box-sizing: border-box;
     border: 12px solid #DCDCDC;
-    transform: rotate(106.2deg);
 }
 
 .triquestra-progress-bar-value {
@@ -587,24 +594,31 @@
     padding-top: 15%;
 }
 
-.triquestra-progress-bar-container .k-selected {
+.bottom-left, .bottom-right {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    bottom: 0;
+}
+
+.triquestra-progress-bar .k-selected {
     display: none;
 }
 
 
 /* Progress Bar Line */
 
-.k-progressbar.triquestra-progress-bar-line-container {
-    width: 500px;
+.k-progressbar.triquestra-progress-bar-line {
+/*    width: 500px;*/
 }
 
-.triquestra-progress-bar-line {
+.triquestra-progress-bar-line-wrapper {
     display: flex;
     align-items: center;
     gap: 7.44px;
 }
 
-.triquestra-progress-bar-line-wrapper {
+.triquestra-progress-bar-line-bar {
     height: 4px;
     background: #DCDCDC;
     border-radius: 2.5px;
@@ -627,7 +641,7 @@
     color: #898989;
 }
 
-.triquestra-progress-bar-line-container .k-selected {
+.k-progressbar.triquestra-progress-bar-line .k-selected {
     display: none;
 }
 

@@ -1,11 +1,11 @@
-﻿<span style="display: block; overflow: hidden; height: 61px;">
-    <TelerikProgressBar Class="triquestra-progress-bar-container"
+﻿<div class="triquestra-progress-bar-container">
+    <TelerikProgressBar Class="triquestra-progress-bar"
                         Value="@Value"
                         Max="@Max">
         <ProgressBarLabel Visible="true">
             <Template>
                 <div class="triquestra-progress-bar-wrapper">
-                    <div class="triquestra-progress-bar"
+                    <div class="triquestra-progress-bar-progressed"
                          style="transform: rotate(@GetBarRorateDegree(context.Value));
                                  border-bottom-color: @ColorCssClass;
                                  border-right-color: @ColorCssClass;">
@@ -17,4 +17,4 @@
             </Template>
         </ProgressBarLabel>
     </TelerikProgressBar>
-</span>
+</div>
