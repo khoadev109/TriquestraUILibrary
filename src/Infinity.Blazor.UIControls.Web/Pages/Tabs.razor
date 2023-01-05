@@ -1,0 +1,22 @@
+﻿@page "/tabs"
+@using Infinity.Blazor.UIControls.Tabs;
+
+<Tab Width="500px" Height="250px" Scrollable="true" ActiveTabIndex="@ActiveTabIndex" Tabs="@tabs" />
+
+@code {
+
+    int ActiveTabIndex { get; set; }
+
+    IList<TabStrip> tabs = new List<TabStrip>
+    {
+        new TabStrip { Title = "Tab Inactive" },
+        new TabStrip { Title = "Tab active" },
+        new TabStrip { Title = "Tab Inactive" },
+        new TabStrip { Title = "Tab Inactive" }
+    };
+
+    public Tabs()
+    {
+        ActiveTabIndex = 1;
+    }
+}

@@ -1,3 +1,22 @@
 ﻿@page "/tags"
+@using Infinity.Blazor.UIControls.Tags;
 
 <PageTitle>Tags</PageTitle>
+
+<Tag Label="Test" />
+<br />
+<Tag Label="Test" Type="TagType.Success" />
+<br />
+<Tag Label="Test" Type="TagType.Warning" />
+<br />
+<Tag Label="Test" Type="TagType.Error" />
+
+<br />
+
+<Tag Label="Test" CanRemove="true" Type="TagType.Primary" />
+<br />
+<Tag Label="Test" CanRemove="true" Type="TagType.Success" />
+<br />
+<Tag Label="Test" CanRemove="true" Type="TagType.Warning" />
+<br />
+<Tag Label="Test" CanRemove="true" Type="TagType.Error" />

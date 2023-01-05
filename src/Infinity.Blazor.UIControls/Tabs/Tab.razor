@@ -1,0 +1,15 @@
+﻿<TelerikTabStrip @ref="@TabRef"
+                 @bind-ActiveTabIndex="@ActiveTabIndex"
+                 TabPosition="@TabPosition.MapToTelerikTabPosition()"
+                 Class="triquestra-tabs"
+                 PersistTabContent="@PersistTabContent"
+                 Scrollable="@Scrollable"
+                 Width="@Width"
+                 Height="@Height">
+    @foreach (var tab in VisibleTabs)
+    {
+        <TabStripTab Title="@tab.Title" Visible="@tab.Visible" Disabled="@tab.Disabled">
+            @tab.Content
+        </TabStripTab>
+    }
+</TelerikTabStrip>

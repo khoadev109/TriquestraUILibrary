@@ -1,0 +1,18 @@
+﻿@using Infinity.Blazor.UIControls.Icons
+
+<span class="triquestra-checkbox-container">
+    <TelerikCheckBox Enabled="@Enabled"
+                     Class="triquestra-checkbox"
+                     Id="@Id"
+                     TabIndex="@TabIndex"
+                     Indeterminate="@Indeterminate"
+                     @bind-Value="@Value"
+                     OnChange="@OnChangeHandler"
+                     IndeterminateChanged="@IndeterminateChangedHandler"
+                     OnBlur="@OnBlurHandler" />
+
+    @if (!string.IsNullOrWhiteSpace(LabelText))
+    {
+        <span class="triquestra-checkbox-label">@LabelText</span>
+    }
+</span>

@@ -1,5 +1,4 @@
-﻿using Infinity.Blazor.UIControls.Icons;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 using Microsoft.AspNetCore.Components;
 
 namespace Infinity.Blazor.UIControls.InputFields;

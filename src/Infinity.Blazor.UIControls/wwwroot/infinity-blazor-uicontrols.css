@@ -1,4 +1,5 @@
 /* TriquestraButton css */
+
 .k-button.triquestra-button {
     font-size: 14px;
     font-style: normal;
@@ -133,7 +134,9 @@
     padding-left: 10px;
 }
 
+
 /* TextBox css */
+
 .triquestra-input-text-container {
     display: flex;
     flex-direction: column;
@@ -151,6 +154,10 @@
     .triquestra-input-text-container .triquestra-input-text-label {
         color: #202020;
         font-weight: 500;
+    }
+
+    .triquestra-input-text-container .k-textbox.triquestra-input-text input {
+        height: 48px;
     }
 
     .triquestra-input-text-container .k-textbox.triquestra-input-text input,
@@ -223,20 +230,427 @@
         margin-top: 12px;
     }
 
-    /* Mobile */
-    @media only screen and (max-width: 600px) {
-        /* TriquestraButton css */
-        .k-button.triquestra-button {
+
+/* Tag css */
+
+.triquestra-tag-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+    gap: 12px;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.triquestra-tag-label {
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.004em;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.triquestra-tag-primary {
+    background: #445D63;
+    color: #FFFFFF;
+}
+
+.triquestra-tag-success {
+    background: #0CAF60;
+    color: #FFFFFF;
+}
+
+.triquestra-tag-warning {
+    background: #FFD023;
+    color: #000000;
+}
+
+.triquestra-tag-error {
+    background: #B00020;
+    color: #FFFFFF;
+}
+
+
+/* Tabs css */
+
+.k-tabstrip.triquestra-tabs {
+}
+
+    .k-tabstrip.triquestra-tabs .k-tabstrip-items-wrapper {
+        background: #FFFFFF;
+    }
+
+        .k-tabstrip.triquestra-tabs .k-tabstrip-items-wrapper .k-tabstrip-items {
+            list-style-type: none;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.0025em;
+            color: #898989;
+            border-bottom: 1px solid #DCDCDC;
+            padding: 12px 24px 8px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+            .k-tabstrip.triquestra-tabs .k-tabstrip-items-wrapper .k-tabstrip-items .k-tabstrip-item {
+                cursor: pointer;
+                text-align: center;
+                padding: 12px 24px 8px;
+            }
+
+                .k-tabstrip.triquestra-tabs .k-tabstrip-items-wrapper .k-tabstrip-items .k-tabstrip-item.k-active {
+                    color: #202020;
+                    border-bottom: 2px solid #202020;
+                    margin-bottom: -1px;
+                }
+
+
+/* Checkbox */
+
+.triquestra-checkbox-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    width: fit-content;
+}
+
+    .triquestra-checkbox-container .k-checkbox.triquestra-checkbox {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border: 1px solid #898989;
+        border-radius: 2px;
+    }
+
+        .triquestra-checkbox-container .k-checkbox.triquestra-checkbox:checked {
+            accent-color: #445D63 !important;
+        }
+
+
+    .triquestra-checkbox-container .triquestra-checkbox-label {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.0025em;
+        color: #202020;
+    }
+
+
+/* Card Selector */
+
+.triquestra-card-selector {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 24px;
+    gap: 10px;
+    background: #FFFFFF;
+    border: 1px solid #DCDCDC;
+    border-radius: 12px;
+}
+
+    .triquestra-card-selector:hover,
+    .triquestra-card-selector:active {
+        background: #76C3B1;
+    }
+
+    .triquestra-card-selector .triquestra-card-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 16px;
+    }
+
+        .triquestra-card-selector .triquestra-card-wrapper .triquestra-card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 4px;
+        }
+
+.triquestra-card-content .triquestra-card-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.001em;
+    color: #202020;
+}
+
+.triquestra-card-content .triquestra-card-description {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.004em;
+    color: #898989;
+}
+
+.triquestra-card-selector:hover .triquestra-card-title,
+.triquestra-card-selector:hover .triquestra-card-description,
+.triquestra-card-selector:active .triquestra-card-title,
+.triquestra-card-selector:active .triquestra-card-description {
+    color: black;
+}
+
+
+/* Switch */
+
+.k-switch-md.triquestra-switch {
+    width: 50px;
+    height: 30px;
+    font-size: 10px;
+}
+
+.k-switch.triquestra-switch {
+    box-sizing: border-box;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    line-height: 1;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.k-rounded-full {
+    border-radius: 9999px;
+}
+
+.k-switch.triquestra-switch [type="checkbox"] {
+    display: none;
+}
+
+.k-switch.triquestra-switch *,
+.k-switch.triquestra-switch *::before,
+.k-switch.triquestra-switch *::after {
+    box-sizing: border-box;
+}
+
+.k-switch-off.triquestra-switch .k-switch-track {
+    border: 2px solid #898989;
+    background: #F9F9F9;
+}
+
+.k-switch-md.triquestra-switch .k-switch-track {
+    width: 50px;
+    height: 30px;
+}
+
+.triquestra-switch .k-switch-track {
+    border-width: 1px;
+    border-style: solid;
+    outline: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1 0 auto;
+    position: relative;
+    transition: background-color 200ms ease-in-out;
+}
+
+.k-switch-on.triquestra-switch .k-switch-track {
+    border-color: #898989;
+    color: white;
+    background-color: #445D63;
+}
+
+.k-switch-on.triquestra-switch .k-switch-label-off {
+    color: transparent;
+}
+
+.k-switch-md.k-switch-on.triquestra-switch .k-switch-thumb-wrap {
+    left: calc(100% - 15px);
+}
+
+.k-switch-on.triquestra-switch .k-switch-thumb {
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #424242;
+    background-color: #fafafa;
+}
+
+.k-switch-thumb-wrap {
+    width: 0;
+    height: 0;
+    overflow: visible;
+    position: absolute;
+    transition: left 200ms ease-in-out;
+    top: 50%;
+}
+
+.k-switch-off.triquestra-switch .k-switch-label-on {
+    color: transparent;
+}
+
+.triquestra-switch .k-switch-label-on, .k-switch-label-off {
+    text-transform: uppercase;
+    display: inline;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+
+.k-switch-md.triquestra-switch .k-switch-label-on {
+    left: 6px;
+    display: none;
+}
+
+.k-switch-md.triquestra-switch .k-switch-label-off {
+    right: 6px;
+    display: none;
+}
+
+.triquestra-switch .k-switch-thumb {
+    border-width: 1px;
+    border-style: solid;
+    display: block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.k-switch-md.triquestra-switch .k-switch-thumb {
+    width: 24px;
+    height: 24px;
+}
+
+.k-switch-off.triquestra-switch .k-switch-thumb {
+    border-color: #898989;
+    color: #424242;
+    background-color: #898989;
+    width: 16px;
+    height: 16px;
+}
+
+.k-switch-md.k-switch-off.triquestra-switch .k-switch-thumb-wrap {
+    left: 15px;
+}
+
+
+/* Progress Bar */
+
+.k-progressbar.triquestra-progress-bar {
+    display: inline-grid;
+    vertical-align: middle;
+    position: relative;
+    border-color: #DCDCDC;
+    /*    border: 12px solid #DCDCDC;*/
+    color: #B00020;
+    background-color: #ebebeb;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 33px;
+}
+
+    .k-progressbar.triquestra-progress-bar.k-progressbar-vertical {
+        margin-left: 1rem;
+    }
+
+    .k-progressbar.triquestra-progress-bar .k-progress-status-wrap {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+    }
+
+    .k-progressbar.triquestra-progress-bar .k- {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+    }
+
+.k-progress-status {
+    padding: 0 0.5em;
+    -webkit-padding-before: 0;
+    padding-block-start: 0;
+    -webkit-padding-after: 0;
+    padding-block-end: 0;
+    -webkit-padding-start: 0.5em;
+    padding-inline-start: 0.5em;
+    -webkit-padding-end: 0.5em;
+    padding-inline-end: 0.5em;
+    min-width: 10px;
+    text-align: center;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.k-progressbar .k-selected {
+    border-color: #116b9e;
+    color: white;
+    background-color: #1274AC;
+}
+
+.k-progressbar > .k-selected {
+    border-width: 0;
+    border-style: solid;
+    display: flex;
+    overflow: hidden;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
+.k-progressbar-vertical > .k-selected {
+    height: 0;
+    height: calc(var( --kendo-progressbar-progress, 0 )*1%);
+    flex-direction: column-reverse;
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+    .k-progressbar-vertical > .k-selected > .k-progress-status-wrap {
+        height: calc(100%*(100/var( --kendo-progressbar-progress, 1 )));
+    }
+
+.k-progressbar-vertical .k-progress-status {
+    writing-mode: vertical-lr;
+}
+
+/* Icons */
+.triquestra-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    .k-button.triquestra-button {
         border-radius: 4px;
         justify-content: center;
         align-items: center;
         padding: 8px 16px;
     }
-}
 
-/* Icons */
-
-.triquestra-icon {
-    width: 16px;
-    height: 16px;
+    .triquestra-input-text-container .k-textbox.triquestra-input-text input {
+        height: 40px;
+    }
 }
