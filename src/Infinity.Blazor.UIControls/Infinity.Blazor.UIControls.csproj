@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ProgressBars\" />
     <Folder Include="Selectors\" />
     <Folder Include="Tags\" />
     <Folder Include="Icons\" />

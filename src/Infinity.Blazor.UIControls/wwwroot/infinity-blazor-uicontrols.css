@@ -136,6 +136,10 @@
 
 
 /* TextBox css */
+.k-input-solid, .k-input-solid:focus-within {
+    border: none;
+    box-shadow:none;
+}
 
 .triquestra-input-text-container {
     display: flex;
@@ -190,8 +194,8 @@
     .triquestra-input-text-container .triquestra-input-text-icon-left,
     .triquestra-input-text-container .triquestra-input-text-icon-right {
         position: absolute;
-        z-index: 1;
-        top: 12px;
+        z-index: 2;
+        top: 15px;
     }
 
     .triquestra-input-text-container .triquestra-input-text-icon-left {
@@ -325,28 +329,28 @@
     width: fit-content;
 }
 
-    .triquestra-checkbox-container .k-checkbox.triquestra-checkbox {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        border: 1px solid #898989;
-        border-radius: 2px;
-    }
+.triquestra-checkbox-container .k-checkbox.triquestra-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1px solid #898989;
+    border-radius: 2px;
+}
 
-        .triquestra-checkbox-container .k-checkbox.triquestra-checkbox:checked {
-            accent-color: #445D63 !important;
-        }
+.triquestra-checkbox-container .k-checkbox.triquestra-checkbox:checked {
+    background-color: #445D63;
+}
 
 
-    .triquestra-checkbox-container .triquestra-checkbox-label {
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 16px;
-        letter-spacing: 0.0025em;
-        color: #202020;
-    }
+.triquestra-checkbox-container .triquestra-checkbox-label {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.0025em;
+    color: #202020;
+}
 
 
 /* Card Selector */
@@ -586,6 +590,29 @@
     display: none;
 }
 
+
+/*Progress Bar Line*/
+.triquestra-progress-bar-line {
+    height: 4px;
+    background: #DCDCDC;
+    border-radius: 2.5px;
+}
+
+.triquestra-progress-bar-line .k-progress-status {
+    display: none;
+}
+
+.triquestra-progress-bar-line-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    color: #898989;
+}
+/*Progress Bar Line*/
+
 /* Icons */
 .triquestra-progress-bar-container .triquestra-icon {
     width: 16px;
@@ -603,5 +630,12 @@
 
     .triquestra-input-text-container .k-textbox.triquestra-input-text input {
         height: 40px;
+    }
+
+    .triquestra-input-text-container .triquestra-input-text-icon-left,
+    .triquestra-input-text-container .triquestra-input-text-icon-right {
+        position: absolute;
+        z-index: 2;
+        top: 12px;
     }
 }
