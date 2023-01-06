@@ -554,11 +554,9 @@
 .triquestra-progress-bar-container {
     display: block;
     overflow: hidden;
-    height: 61px;
 }
 
-.k-progressbar.triquestra-progress-bar {
-    display: block;
+.triquestra-progress-bar-half-circle {
     position: relative;
     margin: 4px;
     float: left;
@@ -568,19 +566,12 @@
 .triquestra-progress-bar-wrapper {
     position: relative;
     overflow: hidden;
-    width: 90px;
-    height: 45px;
-    margin-bottom: -14px;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
 }
 
 .triquestra-progress-bar-progressed {
     position: absolute;
     top: 0;
     left: 0;
-    width: 90px;
-    height: 90px;
     border-radius: 50%;
     box-sizing: border-box;
     border: 12px solid #DCDCDC;
@@ -591,17 +582,39 @@
     font-size: 20px;
     line-height: 33px;
     text-align: center;
-    padding-top: 15%;
+    position: absolute;
+    top: 35%;
+    left: 35%;
 }
 
-.bottom-left, .bottom-right {
+.back {
     width: 12px;
     height: 12px;
+    background: #DCDCDC;
     position: absolute;
-    bottom: 0;
 }
 
-.triquestra-progress-bar .k-selected {
+.triquestra-progress-bar-half-circle .left {
+    position: absolute;
+    width: 11px;
+    height: 16px;
+    border-radius: 50%;
+    left: 0;
+    bottom: -4px;
+    overflow: hidden;
+}
+
+.triquestra-progress-bar-half-circle .right {
+    position: absolute;
+    width: 11px;
+    height: 16px;
+    border-radius: 50%;
+    right: 0;
+    bottom: -4px;
+    overflow: hidden;
+}
+
+.k-progressbar.triquestra-progress-bar .k-selected {
     display: none;
 }
 
@@ -615,7 +628,6 @@
 .triquestra-progress-bar-line-wrapper {
     display: flex;
     align-items: center;
-    gap: 7.44px;
 }
 
 .triquestra-progress-bar-line-bar {
@@ -623,13 +635,14 @@
     background: #DCDCDC;
     border-radius: 2.5px;
     position: relative;
-    width: 100%;
+    flex-basis: 98.5%;
 }
 
 .triquestra-progress-bar-line-progressed {
     position: absolute;
     top: 0;
     left: 0;
+    height: 4px;
 }
 
 .triquestra-progress-bar-line-value {
@@ -639,6 +652,7 @@
     line-height: 15px;
     text-align: right;
     color: #898989;
+    flex-basis: 1.5%;
 }
 
 .k-progressbar.triquestra-progress-bar-line .k-selected {

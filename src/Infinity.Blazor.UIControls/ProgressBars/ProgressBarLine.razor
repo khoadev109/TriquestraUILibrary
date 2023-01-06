@@ -7,8 +7,7 @@
                 <div class="triquestra-progress-bar-line-bar">
                     <div class="triquestra-progress-bar-line-progressed"
                          style="background-color: @ColorCssClass;
-                                border: 2px solid @ColorCssClass;
-                                width: @GetRoundedPercentageValue(context.Value)">
+                                width: @($"{context.Value}%")">
                     </div>
                 </div>
                 <div class="triquestra-progress-bar-line-value">

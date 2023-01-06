@@ -11,8 +11,6 @@ partial class ProgressBarLine
     [Parameter]
     public double Value { get; set; }
 
-    public string GetRoundedPercentageValue(double value) => $"{(value.ToString("N0", CultureInfo.InvariantCulture))}%";
-
     [Parameter]
     public ProgressBarColor Color { get; set; }
 

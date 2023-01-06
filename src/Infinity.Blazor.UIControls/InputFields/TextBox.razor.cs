@@ -59,15 +59,15 @@ partial class TextBox
     public bool Password { get; set; }
 
     [Parameter]
+    public RenderFragment IconTemplate { get; set; }
+
+    [Parameter]
     public IconPosition IconPosition { get; set; }
 
     public string IconClass => "triquestra-icon " +
             (IconPosition == IconPosition.Right
                 ? "triquestra-input-text-icon-right"
                 : "triquestra-input-text-icon-left");
-
-    [Parameter]
-    public RenderFragment IconTemplate { get; set; }
 
     [Parameter]
     public EventCallback OnChangeHandler { get; set; }
