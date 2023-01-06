@@ -15,4 +15,7 @@ partial class ProgressBarLine
     public ProgressBarColor Color { get; set; }
 
     public string ColorCssClass => Color.GetBarColorCssClass();
+
+    [Parameter]
+    public string Width { get; set; }
 }
