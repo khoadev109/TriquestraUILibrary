@@ -2,14 +2,8 @@
 
 namespace Infinity.Blazor.UIControls.Icons;
 
-partial class CloseIcon : BaseIcon
+partial class CloseIcon
 {
-    [Parameter]
-    public string Class { get; set; }
-
-    [Parameter]
-    public string Color { get; set; }
-
     [Parameter]
     public EventCallback OnRemove { get; set; }
 }

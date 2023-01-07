@@ -2,14 +2,8 @@
 
 namespace Infinity.Blazor.UIControls.Icons;
 
-partial class ArrowForwardIcon : BaseIcon
+partial class ArrowForwardIcon
 {
-    [Parameter]
-    public string Class { get; set; }
-
-    [Parameter]
-    public string Color { get; set; }
-
     [Parameter]
     public int Width { get; set; }
 

@@ -23,7 +23,7 @@
 
 <TextBox PlaceHolder="Input here" Width="500px" IconPosition="IconPosition.Right">
     <IconTemplate>
-        <BarcodeScannerIcon />
+        <SearchIcon />
     </IconTemplate>
 </TextBox>
 
@@ -32,12 +32,20 @@
 <EditForm Model="@person">
     <DataAnnotationsValidator />
 
-    <TextBox LabelText="Name:" PlaceHolder="Input here" @bind-Value="@person.Name"></TextBox>
+    <TextBox LabelText="Name:" PlaceHolder="Input here" @bind-Value="@person.Name">
+        <IconTemplate>
+            <AddIcon />
+        </IconTemplate>
+    </TextBox>
     <ValidationMessage For="@(() => person.Name)"></ValidationMessage>
 
     <br />
 
-    <TextBox LabelText="Address:" PlaceHolder="Input here" @bind-Value="@person.Address"></TextBox>
+    <TextBox LabelText="Address:" PlaceHolder="Input here" @bind-Value="@person.Address" IconPosition="IconPosition.Right">
+        <IconTemplate>
+            <EditIcon />
+        </IconTemplate>
+    </TextBox>
     <TelerikValidationMessage For="@(() => person.Address)"></TelerikValidationMessage>
 
     <br />
@@ -64,6 +72,8 @@
     <br />
     <TelerikButton ButtonType="@Telerik.Blazor.ButtonType.Submit">Submit</TelerikButton>
 </EditForm>
+
+<br />
 
 @code {
     Person person { get; set; } = new Person();

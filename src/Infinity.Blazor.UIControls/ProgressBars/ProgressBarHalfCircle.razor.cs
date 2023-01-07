@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 
 namespace Infinity.Blazor.UIControls.ProgressBars;
 
@@ -11,21 +10,24 @@ partial class ProgressBarHalfCircle
     [Parameter]
     public double Value { get; set; }
 
-    public string GetBarRorateDegree(double value) => $"{45 + (value * 1.8)}deg";
-
     [Parameter]
     public ProgressBarColor Color { get; set; }
 
     public string ColorCssClass => Color.GetBarColorCssClass();
 
-    [Parameter]
-    public ProgressBarSize Size { get; set; }
+    // Css styles based on color
 
-    public string Width => $"{Size.GetSizes().Item1}px";
+    private const string CircleBackgroundColor = "#DCDCDC";
 
-    public string Height => $"{Size.GetSizes().Item2}px";
+    public string CircleLeftStyle => $"background: {(Value <= 0 ? CircleBackgroundColor : ColorCssClass)}";
 
-    public string FontSize => $"{Size.GetSizes().Item3}px";
+    public string CircleRightStyle => $"background: {(Value <= 0 || Value < 100 ? CircleBackgroundColor : ColorCssClass)}";
 
-    public string ContainerHeight => $"{(Size.GetSizes().Item2 + 8)}px";
+    public string BarProgressedStyle => $@"
+        transform: rotate({45 + (Value * 1.8)}deg);
+        border-bottom-color: {(Value <= 0 ? "transparent" : ColorCssClass)};
+        border-right-color: {(Value <= 0 ? "transparent" : ColorCssClass)};
+        {(Value == Max ? $"border-color: {ColorCssClass}" : "")}";
+
+    public string BarValueStyle => $"color: {ColorCssClass};";
 }

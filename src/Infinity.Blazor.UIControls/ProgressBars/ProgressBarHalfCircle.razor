@@ -1,25 +1,18 @@
-﻿<div class="triquestra-progress-bar-container" style="height: @ContainerHeight">
+﻿<div class="triquestra-progress-bar-container">
     <TelerikProgressBar Class="triquestra-progress-bar"
                         Value="@Value"
                         Max="@Max">
         <ProgressBarLabel Visible="true">
             <Template>
-                <div class="triquestra-progress-bar-half-circle" style="height: @Height">
-                    <div class="left" style="background: @(Value <= 0 ? "#DCDCDC" : ColorCssClass)"></div>
-                    <div class="right" style="background: @(Value <= 0 || Value < 100 ? "#DCDCDC" : ColorCssClass)">
-                        <div class="back"></div>
-                    </div>
-                    <div class="triquestra-progress-bar-wrapper" style="width: @Width; height: @Height;">
-                        <div class="triquestra-progress-bar-progressed"
-                             style="width: @Width;
-                                    height: @Width;
-                                    transform: rotate(@GetBarRorateDegree(context.Value));
-                                    border-bottom-color: @(Value <= 0 ? "transparent" : ColorCssClass);
-                                    border-right-color: @(Value <= 0 ? "transparent" : ColorCssClass);
-                                    @(Value == Max ? $"border-color: {ColorCssClass}" : "")">
+                <div class="triquestra-progress-bar-half-circle">
+                    <div class="circle-left" style="@CircleLeftStyle"></div>
+                    <div class="circle-right" style="@CircleRightStyle"></div>
+
+                    <div class="triquestra-progress-bar-wrapper">
+                        <div class="triquestra-progress-bar-progressed" style="@BarProgressedStyle">
                         </div>
                     </div>
-                    <div class="triquestra-progress-bar-value" style="color: @ColorCssClass; font-size:@FontSize">
+                    <div class="triquestra-progress-bar-value" style="@BarValueStyle">
                         @context.Value%
                     </div>
                 </div>
