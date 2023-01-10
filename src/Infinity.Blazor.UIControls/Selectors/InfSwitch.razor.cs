@@ -2,7 +2,7 @@
 
 namespace Infinity.Blazor.UIControls.Selectors;
 
-partial class Switch
+partial class InfSwitch
 {
     [Parameter]
     public bool Enabled { get; set; } = true;

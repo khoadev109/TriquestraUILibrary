@@ -2,14 +2,12 @@
 
 .k-button.triquestra-button {
     font-size: 14px;
-    font-style: normal;
     line-height: 16px;
     font-weight: 500;
-    font-family: 'Roboto';
     letter-spacing: 0.0125em;
     text-transform: uppercase;
     border-radius: 8px;
-    padding: 12px 24px;
+    padding: 12px;
     outline: none;
     border: 0px;
     gap: 10px;
@@ -19,9 +17,9 @@
     align-items: center;
 }
 
-    .k-button.triquestra-button:not(.triquestra-button-text-left),
-    .k-button.triquestra-button:not(.triquestra-button-text-right) {
-        padding: 12px;
+    .k-button.triquestra-button:has(.triquestra-button-text-left),
+    .k-button.triquestra-button:has(.triquestra-button-text-right) {
+        padding: 12px 24px;
     }
 
     .k-button.triquestra-button:focus {
@@ -37,32 +35,35 @@
             width: 16px;
             height: 16px;
         }
+
     /* SolidButton css */
     .k-button.triquestra-button.k-button-solid {
         color: white;
         background-color: #445D63;
     }
 
-        .k-button.triquestra-button.k-button-solid:hover {
+        .k-button.triquestra-button.k-button-solid:not(.k-disabled):hover {
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),#445D63;
         }
 
-        .k-button.triquestra-button.k-button-solid:active {
+        .k-button.triquestra-button.k-button-solid:not(.k-disabled):active {
             background-color: rgba(68, 93, 99, 0.6);
         }
 
-        .k-button.triquestra-button.k-button-solid:disabled {
+        .k-button.triquestra-button.k-button-solid.k-disabled {
             color: #898989;
             background-color: #DCDCDC;
         }
+
         /* Icon colors */
         .k-button.triquestra-button.k-button-solid svg path {
             stroke: white;
         }
 
-        .k-button.triquestra-button.k-button-solid:disabled svg path {
+        .k-button.triquestra-button.k-button-solid.k-disabled svg path {
             stroke: #898989;
         }
+
     /* OutlinedButton css */
     .k-button.triquestra-button.k-button-outline {
         color: #445D63;
@@ -70,26 +71,28 @@
         background: white;
     }
 
-        .k-button.triquestra-button.k-button-outline:hover {
+        .k-button.triquestra-button.k-button-outline:not(.k-disabled):hover {
             background: rgba(68, 93, 99, 0.2);
         }
 
-        .k-button.triquestra-button.k-button-outline:active {
+        .k-button.triquestra-button.k-button-outline:not(.k-disabled):active {
             background: rgba(220, 220, 220, 0.2);
         }
 
-        .k-button.triquestra-button.k-button-outline:disabled {
+        .k-button.triquestra-button.k-button-outline.k-disabled {
             color: #898989;
             border: 1px solid #DCDCDC;
         }
+
         /* Icon colors */
         .k-button.triquestra-button.k-button-outline svg path {
             stroke: #445D63;
         }
 
-        .k-button.triquestra-button.k-button-outline:disabled svg path {
+        .k-button.triquestra-button.k-button-outline.k-disabled svg path {
             stroke: #898989;
         }
+
     /* FlatButton css */
     .k-button.triquestra-button.k-button-flat {
         color: #B00020;
@@ -101,46 +104,45 @@
             border-bottom: 1px solid #B00020;
         }
 
-        .k-button.triquestra-button.k-button-flat:hover {
+        .k-button.triquestra-button.k-button-flat:not(.k-disabled):hover {
             color: #EF4444;
         }
 
-        .k-button.triquestra-button.k-button-flat:active {
+        .k-button.triquestra-button.k-button-flat:not(.k-disabled):active {
             color: #B60000;
         }
 
-        .k-button.triquestra-button.k-button-flat:disabled {
+        .k-button.triquestra-button.k-button-flat.k-disabled {
             color: #898989;
         }
+
         /* Icon colors */
         .k-button.triquestra-button.k-button-flat svg path {
             stroke: #B00020;
         }
 
-        .k-button.triquestra-button.k-button-flat:hover .k-button-text svg path {
+        .k-button.triquestra-button.k-button-flat:not(.k-disabled):hover .k-button-text svg path {
             stroke: #EF4444;
         }
 
-        .k-button.triquestra-button.k-button-flat:active svg path {
+        .k-button.triquestra-button.k-button-flat:not(.k-disabled):active svg path {
             stroke: #B60000;
         }
 
-        .k-button.triquestra-button.k-button-flat:disabled .k-button-text svg path {
+        .k-button.triquestra-button.k-button-flat.k-disabled .k-button-text svg path {
             stroke: #898989;
         }
 
-        .k-button.triquestra-button.k-button-flat:disabled .k-button-text {
+        .k-button.triquestra-button.k-button-flat.k-disabled .k-button-text {
             border-bottom-color: #898989;
         }
 
 .k-button-text .triquestra-button-text-left {
     padding-right: 10px;
-    margin-bottom: -2px;
 }
 
 .k-button-text .triquestra-button-text-right {
     padding-left: 10px;
-    margin-bottom: -2px;
 }
 
 .k-button.triquestra-button > .k-button-text:not(:has(svg)) .triquestra-button-text-left,
@@ -162,11 +164,6 @@
     align-items: flex-start;
     padding: 0px;
     gap: 12px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.001em;
     width: fit-content;
     position: relative;
 }
@@ -174,54 +171,48 @@
     .triquestra-input-text-container .triquestra-input-text-label {
         color: #202020;
         font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.001em;
+    }
+
+    .triquestra-input-text-container .k-textbox.triquestra-input-text input,
+    .triquestra-input-text-container .k-textarea.triquestra-input-text textarea {
+        display: flex;
+        gap: 532px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.0025em;
+        color: #898989;
+        background: #F9F9F9;
+        border: none;
+        width: inherit;
+        border: 1px solid #DCDCDC;
+        border-radius: 8px;
+        box-sizing: border-box;
     }
 
     .triquestra-input-text-container .k-textbox.triquestra-input-text input {
         height: 48px;
-    }
-
-    .triquestra-input-text-container .k-textbox.triquestra-input-text input, .triquestra-input-text-container .k-textarea.triquestra-input-text textarea {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
         padding: 12px;
-        gap: 532px;
-        font-weight: 400;
-        color: #898989;
-        background: #F9F9F9;
-        border: 1px solid #DCDCDC;
-        border-radius: 8px;
-        width: inherit;
     }
 
     .triquestra-input-text-container .k-textarea.triquestra-input-text textarea {
-        padding-left: 26px;
+        padding: 17px 26px;
     }
 
     .triquestra-input-text-container:has(.triquestra-input-text-icon-left) .k-textbox.triquestra-input-text input {
-        padding-left: calc(12px + 24px);
+        padding-left: 48px;
     }
 
     .triquestra-input-text-container:has(.triquestra-input-text-icon-right) .k-textbox.triquestra-input-text input {
-        padding-right: calc(12px + 24px);
+        padding-right: 48px;
     }
 
-    .triquestra-input-text-container .triquestra-input-text-icon-left, .triquestra-input-text-container .triquestra-input-text-icon-right {
+    .triquestra-input-text-container .triquestra-input-text-icon-left,
+    .triquestra-input-text-container .triquestra-input-text-icon-right {
         position: absolute;
-        z-index: 2;
-    }
-
-        .triquestra-input-text-container .triquestra-input-text-icon-left svg, .triquestra-input-text-container .triquestra-input-text-icon-right svg {
-            width: 16px;
-            height: 16px;
-        }
-
-    .triquestra-input-text-container:not(:has(.triquestra-input-text-label)) .triquestra-input-text-icon-left, .triquestra-input-text-container:not(:has(.triquestra-input-text-label)) .triquestra-input-text-icon-right {
-        top: 16px;
-    }
-
-    .triquestra-input-text-container:has(.triquestra-input-text-label) .triquestra-input-text-icon-left, .triquestra-input-text-container:has(.triquestra-input-text-label) .triquestra-input-text-icon-right {
-        bottom: 16px;
     }
 
     .triquestra-input-text-container .triquestra-input-text-icon-left {
@@ -229,22 +220,39 @@
     }
 
     .triquestra-input-text-container .triquestra-input-text-icon-right {
-        right: 13px;
+        right: 36px;
     }
 
-    .triquestra-input-text-container .k-textbox.triquestra-input-text input:active, .triquestra-input-text-container .k-textbox.triquestra-input-text input:focus, .triquestra-input-text-container .k-textarea.triquestra-input-text textarea:active, .triquestra-input-text-container .k-textarea.triquestra-input-text textarea:focus {
+        .triquestra-input-text-container .triquestra-input-text-icon-left svg,
+        .triquestra-input-text-container .triquestra-input-text-icon-right svg {
+            width: 22px;
+            height: 18px;
+            position: absolute;
+        }
+
+    .triquestra-input-text-container:not(:has(.triquestra-input-text-label)) .triquestra-input-text-icon-left,
+    .triquestra-input-text-container:not(:has(.triquestra-input-text-label)) .triquestra-input-text-icon-right {
+        top: 16px;
+    }
+
+    .triquestra-input-text-container .k-textbox.triquestra-input-text.k-focus input,
+    .triquestra-input-text-container .k-textarea.triquestra-input-text.k-focus textarea {
         color: #202020;
         background: white;
         border: 1px solid #0062FF;
     }
 
-    .triquestra-input-text-container:has(+ .k-invalid-msg) .k-textbox.triquestra-input-text input, .triquestra-input-text-container:has(+ .validation-message) .k-textbox.triquestra-input-text input, .triquestra-input-text-container:has(+ .k-invalid-msg) .k-textarea.triquestra-input-text textarea, .triquestra-input-text-container:has(+ .validation-message) .k-textarea.triquestra-input-text textarea {
+    .triquestra-input-text-container:has(+ .k-invalid-msg) .k-textbox.triquestra-input-text input,
+    .triquestra-input-text-container:has(+ .validation-message) .k-textbox.triquestra-input-text input,
+    .triquestra-input-text-container:has(+ .k-invalid-msg) .k-textarea.triquestra-input-text textarea,
+    .triquestra-input-text-container:has(+ .validation-message) .k-textarea.triquestra-input-text textarea {
         color: #202020;
         background: white;
         border: 1px solid #B00020;
     }
 
-    .triquestra-input-text-container + .k-invalid-msg, .triquestra-input-text-container + .validation-message {
+    .triquestra-input-text-container + .k-invalid-msg,
+    .triquestra-input-text-container + .validation-message {
         color: #B00020;
         font-weight: 400;
         font-size: 12px;
@@ -252,7 +260,10 @@
         letter-spacing: 0.004em;
         margin-top: 12px;
     }
+
+
 /* Tag css */
+
 .triquestra-tag-container {
     display: flex;
     flex-direction: row;
@@ -271,6 +282,11 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
+}
+
+.triquestra-tag-icon {
+    width: 18px;
+    height: 18px;
 }
 
 .triquestra-tag-primary {
@@ -292,7 +308,10 @@
     background: #B00020;
     color: #FFFFFF;
 }
+
+
 /* Tabs css */
+
 .k-tabstrip.triquestra-tabs {
 }
 
@@ -325,11 +344,16 @@
             }
 
                 .k-tabstrip.triquestra-tabs .k-tabstrip-items-wrapper .k-tabstrip-items .k-tabstrip-item.k-active {
+                    font-weight: 700;
+                    letter-spacing: 0.001em;
                     color: #202020;
                     border-bottom: 2px solid #202020;
-                    margin-bottom: -1px;
+                    margin-bottom: -2px;
                 }
+
+
 /* Checkbox */
+
 .triquestra-checkbox-container {
     display: flex;
     flex-direction: row;
@@ -342,28 +366,28 @@
     .triquestra-checkbox-container .k-checkbox.triquestra-checkbox {
         width: 20px;
         height: 20px;
-        margin-right: 10px;
+        margin-right: 12px;
         border: 1px solid #898989;
         border-radius: 2px;
     }
 
         .triquestra-checkbox-container .k-checkbox.triquestra-checkbox:checked {
-            background-color: #445D63;
+            accent-color: #445D63;
         }
 
-    .triquestra-checkbox-container .triquestra-checkbox-label {
-        font-family: 'Roboto';
-        font-style: normal;
+    .triquestra-checkbox-container label.triquestra-checkbox-label {
         font-weight: 400;
         font-size: 14px;
         line-height: 16px;
         letter-spacing: 0.0025em;
         color: #202020;
     }
+
+
 /* Card Selector */
+
 .triquestra-card-selector {
     display: flex;
-    flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
     padding: 24px;
@@ -371,18 +395,21 @@
     background: #FFFFFF;
     border: 1px solid #DCDCDC;
     border-radius: 12px;
+    max-width: calc(100% - 20px);
 }
 
     .triquestra-card-selector:hover, .triquestra-card-selector:active {
         background: #76C3B1;
+        border-color: #76C3B1;
     }
 
     .triquestra-card-selector .triquestra-card-wrapper {
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 0px;
-        gap: 16px;
+        padding: 2px 6px;
+        gap: 22px;
+        width: 100%;
     }
 
         .triquestra-card-selector .triquestra-card-wrapper .triquestra-card-content {
@@ -409,10 +436,17 @@
     color: #898989;
 }
 
+.triquestra-card-selector .triquestra-card-wrapper svg:has(.triquestra-card-arrow) {
+    margin-left: auto;
+}
+
 .triquestra-card-selector:hover .triquestra-card-title, .triquestra-card-selector:hover .triquestra-card-description, .triquestra-card-selector:active .triquestra-card-title, .triquestra-card-selector:active .triquestra-card-description {
     color: black;
 }
+
+
 /* Switch */
+
 .k-switch-md.triquestra-switch {
     width: 50px;
     height: 30px;
@@ -544,7 +578,10 @@
 .k-switch-md.k-switch-off.triquestra-switch .k-switch-thumb-wrap {
     left: 15px;
 }
+
+
 /* Progress Bar Half Circle */
+
 .triquestra-progress-bar-container {
     display: block;
     overflow: hidden;
@@ -561,8 +598,6 @@
 .triquestra-progress-bar-wrapper {
     position: relative;
     overflow: hidden;
-    width: 116px;
-    height: 61px;
 }
 
 .triquestra-progress-bar-progressed {
@@ -571,28 +606,17 @@
     left: 0;
     border-radius: 50%;
     box-sizing: border-box;
-    border: 12px solid #DCDCDC;
-    width: 116px;
-    height: 116px;
 }
 
 .triquestra-progress-bar-value {
     font-weight: 700;
-    font-size: 28px;
     line-height: 33px;
-    text-align: center;
     position: absolute;
-    bottom: 0;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .triquestra-progress-bar-half-circle .circle-left {
     position: absolute;
-    width: 11.15px;
-    height: 16px;
     border-radius: 50%;
     left: 0;
     bottom: -4px;
@@ -601,8 +625,6 @@
 
 .triquestra-progress-bar-half-circle .circle-right {
     position: absolute;
-    width: 11px;
-    height: 16px;
     border-radius: 50%;
     right: 0;
     bottom: -4px;
@@ -612,7 +634,10 @@
 .k-progressbar.triquestra-progress-bar .k-selected {
     display: none;
 }
+
+
 /* Progress Bar Line */
+
 .k-progressbar.triquestra-progress-bar-line {
 }
 
@@ -635,11 +660,10 @@
     top: 0;
     left: 0;
     height: 4px;
-    border-radius: 2.5px;
+    border-radius: 2.5px 0px 0px 2.5px;
 }
 
 .triquestra-progress-bar-line-value {
-    font-family: 'Inter';
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
@@ -651,22 +675,24 @@
 .k-progressbar.triquestra-progress-bar-line .k-selected {
     display: none;
 }
+
 /* Icons */
 .triquestra-icon {
     width: 16px;
     height: 16px;
 }
+
 /* Mobile */
 @media only screen and (max-width: 600px) {
     /* Button */
     .k-button.triquestra-button {
         border-radius: 4px;
-        padding: 8px 16px;
+        padding: 8px;
     }
 
-        .k-button.triquestra-button:not(.triquestra-button-text-left),
-        .k-button.triquestra-button:not(.triquestra-button-text-right) {
-            padding: 8px;
+        .k-button.triquestra-button:has(.triquestra-button-text-left),
+        .k-button.triquestra-button:has(.triquestra-button-text-right) {
+            padding: 8px 16px;
         }
 
         .k-button.triquestra-button > .k-button-text svg {
@@ -683,39 +709,11 @@
     .triquestra-input-text-container .triquestra-input-text-icon-right {
         position: absolute;
         z-index: 2;
-        top: 12px;
+        bottom: 12px;
     }
 
-
-    /* Progress Bar Half Circle */
-    .triquestra-progress-bar-value {
-        font-size: 20px;
-    }
-
-    .triquestra-progress-bar-wrapper {
-        position: relative;
-        overflow: hidden;
-        width: 92px;
-        height: 48px;
-    }
-
-    .triquestra-progress-bar-progressed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 50%;
-        box-sizing: border-box;
-        border: 12px solid #DCDCDC;
-        width: 92px;
-        height: 92px;
-    }
-
-    .triquestra-progress-bar-half-circle .circle-left {
-        width: 12px;
-    }
-
-    .triquestra-progress-bar-half-circle .circle-right {
-        width: 12px;
-        right: -0.35px;
-    }
+        .triquestra-input-text-container .triquestra-input-text-icon-left svg,
+        .triquestra-input-text-container .triquestra-input-text-icon-right svg {
+            bottom: 0;
+        }
 }

@@ -18,8 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Selectors\" />
+    <Folder Include="ProgressBars\" />
     <Folder Include="Tags\" />
     <Folder Include="Icons\" />
+    <Folder Include="Selectors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Selectors\" />
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@ namespace Infinity.Blazor.UIControls.ProgressBars
 		Yellow
 	}
 
-	public static class ProgressBars
+	public static class ProgressBarColors
 	{
         public static Dictionary<ProgressBarColor, string> ColorCssClasses => new Dictionary<ProgressBarColor, string>
         {
@@ -19,11 +19,18 @@ namespace Infinity.Blazor.UIControls.ProgressBars
             [ProgressBarColor.Yellow] = "#FFD023"
         };
 
-        public static string GetBarColorCssClass(this ProgressBarColor color)
+        public static string GetBarColorCssClass(this double currentPercentage, Dictionary<ProgressBarColor, double> mappedThresholdPercentageColors)
         {
-            ColorCssClasses.TryGetValue(color, out string cssClass);
+            foreach (var item in mappedThresholdPercentageColors)
+            {
+                if (currentPercentage <= item.Value)
+                {
+                    ColorCssClasses.TryGetValue(item.Key, out string cssClass);
+                    return cssClass;
+                }
+            }
 
-            return cssClass;
+            return string.Empty;
         }
     }
 }

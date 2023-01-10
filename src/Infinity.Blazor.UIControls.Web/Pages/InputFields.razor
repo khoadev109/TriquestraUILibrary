@@ -7,87 +7,92 @@
 @using Infinity.Blazor.UIControls.InputFields
 @using Infinity.Blazor.UIControls.Icons
 
-<h2>Input Text</h2>
-
-<TextBox PlaceHolder="Input here" Width="500px" />
+<h3>Textbox</h3>
 
 <br />
 
-<TextBox PlaceHolder="Input here" Width="500px">
-    <IconTemplate>
-        <BarcodeScannerIcon />
-    </IconTemplate>
-</TextBox>
+<div>
+    <EditForm Model="@person">
+        <DataAnnotationsValidator />
+
+        <InfTextBox PlaceHolder="Placeholder" @bind-Value="@person.ErrorTextBox" />
+        <TelerikValidationMessage For="@(() => person.ErrorTextBox)"></TelerikValidationMessage>
+
+        <br />
+        <br />
+
+        <InfTextBox PlaceHolder="Placeholder" @bind-Value="@person.ErrorTextBoxRightIcon" IconPosition="IconPosition.Right">
+            <IconTemplate>
+                <BarcodeScannerIcon />
+            </IconTemplate>
+        </InfTextBox>
+        <TelerikValidationMessage For="@(() => person.ErrorTextBoxRightIcon)"></TelerikValidationMessage>
+
+        <br />
+        <br />
+
+        <InfTextBox PlaceHolder="Placeholder" @bind-Value="@person.ErrorTextBoxLeftIcon">
+            <IconTemplate>
+                <BarcodeScannerIcon />
+            </IconTemplate>
+        </InfTextBox>
+        <TelerikValidationMessage For="@(() => person.ErrorTextBoxLeftIcon)"></TelerikValidationMessage>
+    </EditForm>
+</div>
 
 <br />
 
-<TextBox PlaceHolder="Input here" Width="500px" IconPosition="IconPosition.Right">
-    <IconTemplate>
-        <SearchIcon />
-    </IconTemplate>
-</TextBox>
+<br />
+
+<h3>Input-Text</h3>
 
 <br />
 
-<EditForm Model="@person">
-    <DataAnnotationsValidator />
+<div>
+    <EditForm Model="@person">
+        <DataAnnotationsValidator />
 
-    <TextBox LabelText="Name:" PlaceHolder="Input here" @bind-Value="@person.Name">
-        <IconTemplate>
-            <AddIcon />
-        </IconTemplate>
-    </TextBox>
-    <ValidationMessage For="@(() => person.Name)"></ValidationMessage>
+        <InfTextBox LabelText="Description" PlaceHolder="Placeholder" @bind-Value="@person.ErrorInputText" />
+        <TelerikValidationMessage For="@(() => person.ErrorInputText)"></TelerikValidationMessage>
 
-    <br />
-
-    <TextBox LabelText="Address:" PlaceHolder="Input here" @bind-Value="@person.Address" IconPosition="IconPosition.Right">
-        <IconTemplate>
-            <EditIcon />
-        </IconTemplate>
-    </TextBox>
-    <TelerikValidationMessage For="@(() => person.Address)"></TelerikValidationMessage>
-
-    <br />
-    <br />
-    <TelerikButton ButtonType="@Telerik.Blazor.ButtonType.Submit">Submit</TelerikButton>
-</EditForm>
+    </EditForm>
+</div>
 
 <br />
 
-<h2>Input Text Area</h2>
+<br />
 
-<EditForm Model="@person">
-    <DataAnnotationsValidator />
-
-    <TextArea LabelText="Name:" PlaceHolder="Input here" @bind-Value="@person.Name" Width="500px"></TextArea>
-    <ValidationMessage For="@(() => person.Name)"></ValidationMessage>
-
-    <br />
-
-    <TextArea LabelText="Address:" PlaceHolder="Input here" @bind-Value="@person.Address"></TextArea>
-    <TelerikValidationMessage For="@(() => person.Address)"></TelerikValidationMessage>
-
-    <br />
-    <br />
-    <TelerikButton ButtonType="@Telerik.Blazor.ButtonType.Submit">Submit</TelerikButton>
-</EditForm>
+<h3>Input-Text-Area</h3>
 
 <br />
+
+<div>
+    <EditForm Model="@person">
+        <DataAnnotationsValidator />
+
+        <InfTextArea LabelText="Description" PlaceHolder="Placeholder here" @bind-Value="@person.ErrorInputTextArea" />
+        <TelerikValidationMessage For="@(() => person.ErrorInputTextArea)"></TelerikValidationMessage>
+    </EditForm>
+</div>
 
 @code {
     Person person { get; set; } = new Person();
 
-    string theTbValue { get; set; } = "lorem ipsum";
-
     public class Person
     {
-        [Required(ErrorMessage = "Enter a name")]
-        [MinLength(3, ErrorMessage = "That name is too short")]
-        [StringLength(10, ErrorMessage = "That name is too long")]
-        public string Name { get; set; }
+        [Required(ErrorMessage = "Required")]
+        public string ErrorTextBox { get; set; }
 
-        [Required(ErrorMessage = "Enter an address")]
-        public string Address { get; set; }
+        [Required(ErrorMessage = "Required")]
+        public string ErrorTextBoxLeftIcon { get; set; }
+
+        [Required(ErrorMessage = "Required")]
+        public string ErrorTextBoxRightIcon { get; set; }
+
+        [Required(ErrorMessage = "Required")]
+        public string ErrorInputText { get; set; }
+
+        [Required(ErrorMessage = "Required")]
+        public string ErrorInputTextArea { get; set; }
     }
 }

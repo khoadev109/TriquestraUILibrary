@@ -4,46 +4,88 @@
 
 @using Infinity.Blazor.UIControls.ProgressBars
 
-<div style="margin-bottom: 20px;">
+<h3>Total Stock Count</h3>
 
-    <ProgressBarHalfCircle Color="ProgressBarColor.Red" Value="0" />
+<br />
 
-    <ProgressBarHalfCircle Color="ProgressBarColor.Red" Value="10" />
+<div style="display: flex; align-items: center;">
 
-    <ProgressBarHalfCircle Color="ProgressBarColor.Green" Value="30" />
+    <h4 style="width: 100px;">Large</h4>
 
-    <ProgressBarHalfCircle Color="ProgressBarColor.Yellow" Value="50" />
+    <InfProgressBarHalfCircle Value="10" />
 
-    <ProgressBarHalfCircle Color="ProgressBarColor.Yellow" Value="80" />
+    <InfProgressBarHalfCircle Value="30" />
 
-    <ProgressBarHalfCircle Color="ProgressBarColor.Yellow" Value="100" />
+    <InfProgressBarHalfCircle Value="40" />
+
+    <InfProgressBarHalfCircle Value="60" />
+
+    <InfProgressBarHalfCircle Value="75" />
+
+    <InfProgressBarHalfCircle Value="85" />
+
+    <InfProgressBarHalfCircle Value="100" />
 
 </div>
 
+<br />
+
+<br />
+
+<div style="display: flex; align-items: center;">
+
+    <h4 style="width: 100px;">Small</h4>
+
+    <InfProgressBarHalfCircle Value="10" Size="ProgressBarHalfCircleSize.Small" />
+
+    <InfProgressBarHalfCircle Value="30" Size="ProgressBarHalfCircleSize.Small" />
+
+    <InfProgressBarHalfCircle Value="40" Size="ProgressBarHalfCircleSize.Small" />
+
+    <InfProgressBarHalfCircle Value="60" Size="ProgressBarHalfCircleSize.Small" />
+
+    <InfProgressBarHalfCircle Value="75" Size="ProgressBarHalfCircleSize.Small" />
+
+    <InfProgressBarHalfCircle Value="85" Size="ProgressBarHalfCircleSize.Small" />
+
+    <InfProgressBarHalfCircle Value="100" Size="ProgressBarHalfCircleSize.Small" />
+
+</div>
+
+<br />
+
+<br />
+
+<h3>Stocktake Progress</h3>
+
+<br />
+
 <div>
 
-    <ProgressBarLine Color="ProgressBarColor.Red" Value="0" Width="600px" />
+    <InfProgressBarLine Value="15" LowThresholdMaxPercentage="40" MidThresholdMaxPercentage="70" Width="322px" />
 
-    <ProgressBarLine Color="ProgressBarColor.Red" Value="10" Width="100%" />
+    <br />
 
-    <ProgressBarLine Color="ProgressBarColor.Green" Value="30" Width="200px" />
+    <InfProgressBarLine Value="30" LowThresholdMaxPercentage="40" MidThresholdMaxPercentage="70" Width="322px" />
 
-    <ProgressBarLine Color="ProgressBarColor.Yellow" Value="50" Width="400px" />
+    <br />
 
-    <ProgressBarLine Color="ProgressBarColor.Yellow" Value="80" Width="800px" />
+    <InfProgressBarLine Value="45" LowThresholdMaxPercentage="40" MidThresholdMaxPercentage="70" Width="322px" />
 
-    <ProgressBarLine Color="ProgressBarColor.Yellow" Value="100" Width="1000px" />
+    <br />
 
-    <ProgressBarLine Color="ProgressBarColor.Red" Value="0" Width="500px" />
+    <InfProgressBarLine Value="65" LowThresholdMaxPercentage="40" MidThresholdMaxPercentage="70" Width="322px" />
 
-    <ProgressBarLine Color="ProgressBarColor.Red" Value="10" Width="500px" />
+    <br />
 
-    <ProgressBarLine Color="ProgressBarColor.Green" Value="30" Width="500px" />
+    <InfProgressBarLine Value="75" LowThresholdMaxPercentage="40" MidThresholdMaxPercentage="70" Width="322px" />
 
-    <ProgressBarLine Color="ProgressBarColor.Yellow" Value="50" Width="500px" />
+    <br />
 
-    <ProgressBarLine Color="ProgressBarColor.Yellow" Value="80" Width="500px" />
+    <InfProgressBarLine Value="85" LowThresholdMaxPercentage="40" MidThresholdMaxPercentage="70" Width="322px" />
 
-    <ProgressBarLine Color="ProgressBarColor.Yellow" Value="100" Width="500px" />
+    <br />
+
+    <InfProgressBarLine Value="100" LowThresholdMaxPercentage="40" MidThresholdMaxPercentage="70" Width="322px" />
 
 </div>

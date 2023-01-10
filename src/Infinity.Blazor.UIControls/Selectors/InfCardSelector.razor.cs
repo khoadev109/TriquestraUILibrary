@@ -2,7 +2,7 @@
 
 namespace Infinity.Blazor.UIControls.Selectors
 {
-    partial class CardSelector
+    partial class InfCardSelector
 	{
 		[Parameter]
 		public string Title { get; set; }
@@ -11,12 +11,13 @@ namespace Infinity.Blazor.UIControls.Selectors
         public string Description { get; set; }
 
         [Parameter]
-        public string Width { get; set; }
+        public string Width { get; set; } = "500px";
 
         public bool Active { get; set; } = false;
 
-        public void OnClick() => Active = true;
-        
+        [Parameter]
+        public EventCallback OnClick { get; set; }
+
         public void OnHover() => Active = true;
 
         public void OnBlur() => Active = false;

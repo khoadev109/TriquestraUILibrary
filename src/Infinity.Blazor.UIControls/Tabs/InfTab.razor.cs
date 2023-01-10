@@ -3,7 +3,7 @@ using Telerik.Blazor.Components;
 
 namespace Infinity.Blazor.UIControls.Tabs;
 
-partial class Tab
+partial class InfTab
 {
     [Parameter]
     public string Id { get; set; }

@@ -6,7 +6,7 @@
         <span class="triquestra-tag-label">@Label</span>
         @if (CanRemove)
         {
-            <CloseIcon Color="@(TagType == TagType.Warning ? "black" : "white")" OnRemove="@RemoveIcon" />
+            <CloseIcon Class="triquestra-tag-icon" Color="@(TagType == TagType.Warning ? "black" : "white")" OnRemove="@RemoveIcon" />
         }
     </div>
 }

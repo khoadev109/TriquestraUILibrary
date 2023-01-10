@@ -3,22 +3,16 @@ using Microsoft.AspNetCore.Components;
 
 namespace Infinity.Blazor.UIControls.InputFields;
 
-partial class TextArea
+partial class InfTextArea
 {
     [Parameter]
     public string Id { get; set; }
 
     [Parameter]
-    public string Title { get; set; }
-
-    [Parameter]
-    public string SpriteClass { get; set; }
-
-    [Parameter]
-    public bool Enabled { get; set; } = true;
-
-    [Parameter]
     public string LabelText { get; set; }
+
+    [Parameter]
+    public string Name { get; set; }
 
     [Parameter]
     public string PlaceHolder { get; set; }
@@ -27,10 +21,19 @@ partial class TextArea
     public int? TabIndex { get; set; }
 
     [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public bool Enabled { get; set; } = true;
+
+    [Parameter]
     public bool AutoSize { get; set; } = true;
 
     [Parameter]
-    public string Width { get; set; }
+    public int DebounceDelay { get; set; }
+
+    [Parameter]
+    public string Width { get; set; } = "500px";
 
     private string _value;
 

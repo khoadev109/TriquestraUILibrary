@@ -1,4 +1,6 @@
-﻿<div class="triquestra-progress-bar-container">
+﻿@inherits ProgressBar
+
+<div class="triquestra-progress-bar-container">
     <TelerikProgressBar Class="triquestra-progress-bar"
                         Value="@Value"
                         Max="@Max">
@@ -8,7 +10,7 @@
                     <div class="circle-left" style="@CircleLeftStyle"></div>
                     <div class="circle-right" style="@CircleRightStyle"></div>
 
-                    <div class="triquestra-progress-bar-wrapper">
+                    <div class="triquestra-progress-bar-wrapper" style="@BarWrapperStyle">
                         <div class="triquestra-progress-bar-progressed" style="@BarProgressedStyle">
                         </div>
                     </div>

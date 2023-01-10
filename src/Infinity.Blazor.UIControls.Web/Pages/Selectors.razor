@@ -4,15 +4,41 @@
 
 @using Infinity.Blazor.UIControls.Selectors
 
-<Checkbox LabelText="Checkbox label" />
-<br/>
-<Checkbox LabelText="Checkbox label" Value="true"/>
-<br />
+<div class="selector">
+    <h4 class="selector-title">Checkbox</h4>
 
-<CardSelector Title="Title" Description="Description" Width="500px" />
+    <br />
 
-<br />
+    <InfCheckbox LabelText="Checkbox label" />
 
-<Switch/>
-<br /><br />
-<Switch Value="true" />
+    <br />
+
+    <InfCheckbox />
+</div>
+
+<div class="selector">
+    <h4 class="selector-title">Card Selector</h4>
+
+    <br />
+
+    <InfCardSelector Title="Title" Description="Description" />
+</div>
+
+<div class="selector">
+    <h4 class="selector-title">Switch</h4>
+
+    <br />
+
+    <InfSwitch />
+</div>
+
+<style>
+    .selector {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+    .selector-title {
+        width: 200px;
+    }
+</style>

@@ -4,17 +4,23 @@ using Microsoft.AspNetCore.Components;
 
 namespace Infinity.Blazor.UIControls.InputFields;
 
-partial class TextBox
+partial class InfTextBox
 {
     [Parameter]
     public string Id { get; set; }
 
     [Parameter]
     public string Title { get; set; }
-    
+
     [Parameter]
-    public string SpriteClass { get; set; }
-    
+    public string Name { get; set; }
+
+    [Parameter]
+    public string PlaceHolder { get; set; }
+
+    [Parameter]
+    public bool Password { get; set; }
+
     [Parameter]
     public bool Enabled { get; set; } = true;
 
@@ -22,13 +28,13 @@ partial class TextBox
     public string LabelText { get; set; }
 
     [Parameter]
-    public string PlaceHolder { get; set; }
-
-    [Parameter]
     public int? TabIndex { get; set; }
 
     [Parameter]
-    public string Width { get; set; }
+    public int DebounceDelay { get; set; }
+
+    [Parameter]
+    public string Width { get; set; } = "500px";
 
     private string _value;
 
@@ -55,19 +61,28 @@ partial class TextBox
     [Parameter]
     public ValidationEvent ValidateOn { get; set; }
 
-    [Parameter]
-    public bool Password { get; set; }
+    private RenderFragment _iconTemplate;
 
     [Parameter]
-    public RenderFragment IconTemplate { get; set; }
+    public RenderFragment IconTemplate
+    {
+        get => _iconTemplate;
+        set
+        {
+            if (!string.IsNullOrWhiteSpace(LabelText))
+            {
+                value = null;
+            }
+            _iconTemplate = value;
+        }
+    }
 
     [Parameter]
     public IconPosition IconPosition { get; set; }
 
-    public string IconClass => "triquestra-icon " +
-            (IconPosition == IconPosition.Right
-                ? "triquestra-input-text-icon-right"
-                : "triquestra-input-text-icon-left");
+    public string IconClass => (IconPosition == IconPosition.Right
+                                ? "triquestra-input-text-icon-right"
+                                : "triquestra-input-text-icon-left");
 
     [Parameter]
     public EventCallback OnChangeHandler { get; set; }

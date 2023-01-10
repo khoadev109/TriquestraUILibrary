@@ -2,7 +2,7 @@
 
 namespace Infinity.Blazor.UIControls.Tags;
 
-partial class Tag
+partial class InfTag
 {
     [Parameter]
     public string Label { get; set; }

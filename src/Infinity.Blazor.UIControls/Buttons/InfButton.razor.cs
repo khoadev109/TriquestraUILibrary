@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace Infinity.Blazor.UIControls.Buttons;
 
-partial class Button
+partial class InfButton
 {
     [Parameter]
     public ButtonType ButtonType { get; set; }

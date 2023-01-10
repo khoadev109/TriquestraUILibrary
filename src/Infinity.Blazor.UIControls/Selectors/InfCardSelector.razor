@@ -1,7 +1,7 @@
 ﻿@using Infinity.Blazor.UIControls.Icons
 
 <span class="triquestra-card-selector"
-      style="width:@Width"
+      style="width: @Width"
       onclick="@OnClick"
       onmouseover="@OnHover"
       onmouseout="@OnBlur">
@@ -12,9 +12,10 @@
             <span class="triquestra-card-title">@Title</span>
             <span class="triquestra-card-description">@Description</span>
         </span>
+
+        @if (Active)
+        {
+            <ArrowForwardIcon Class="triquestra-card-arrow" Color="black" Width="16" Height="16" />
+        }
     </span>
-    @if (Active)
-    {
-        <ArrowForwardIcon Color="black" Width="24" Height="24" />
-    }
 </span>

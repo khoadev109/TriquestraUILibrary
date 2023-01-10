@@ -3,20 +3,54 @@
 
 <PageTitle>Tags</PageTitle>
 
-<Tag Label="Label Chip" />
-<br />
-<Tag Label="Label Chip" TagType="TagType.Success" />
-<br />
-<Tag Label="Label Chip" TagType="TagType.Warning" />
-<br />
-<Tag Label="Label Chip" TagType="TagType.Error" />
+<div class="tags">
+    <div class="tag-type">
+        Primary
+    </div>
 
-<br />
+    <InfTag Label="Label chip" />
 
-<Tag Label="Label Chip" CanRemove="true" TagType="TagType.Primary" />
-<br />
-<Tag Label="Label Chip" CanRemove="true" TagType="TagType.Success" />
-<br />
-<Tag Label="Label Chip" CanRemove="true" TagType="TagType.Warning" />
-<br />
-<Tag Label="Label Chip" CanRemove="true" TagType="TagType.Error" />
+    <InfTag Label="Label chip" CanRemove="true" />
+</div>
+
+<div class="tags">
+    <div class="tag-type">
+        Success
+    </div>
+
+    <InfTag Label="Label chip" TagType="TagType.Success" />
+
+    <InfTag Label="Label chip" CanRemove="true" TagType="TagType.Success" />
+</div>
+
+<div class="tags">
+    <div class="tag-type">
+        Warning
+    </div>
+
+    <InfTag Label="Label chip" TagType="TagType.Warning" />
+
+    <InfTag Label="Label chip" CanRemove="true" TagType="TagType.Warning" />
+</div>
+
+<div class="tags">
+    <div class="tag-type">
+        Error
+    </div>
+
+    <InfTag Label="Label chip" TagType="TagType.Error" />
+
+    <InfTag Label="Label chip" CanRemove="true" TagType="TagType.Error" />
+</div>
+
+<style>
+    .tags {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .tag-type {
+        width: 100px;
+    }
+</style>

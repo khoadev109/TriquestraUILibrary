@@ -4,87 +4,225 @@
 
 <PageTitle>Buttons</PageTitle>
 
-<Button LabelText="Solid Button"/>
-<br />
-<Button LabelText="Solid Button" IconPosition="IconPosition.Right">
-    <IconTemplate>
-        <AddIcon />
-    </IconTemplate>
-</Button>
-<br />
-<Button LabelText="Solid Button" IconPosition="IconPosition.Left">
-    <IconTemplate>
-        <EditIcon />
-    </IconTemplate>
-</Button>
-<br />
-<Button IconPosition="IconPosition.Right">
-    <IconTemplate>
-        <DeleteIcon />
-    </IconTemplate>
-</Button>
-<br />
 
-<Button LabelText="Solid Button" FillMode="FillMode.Solid" Enabled="false">
-    <IconTemplate>
-        <PublishIcon />
-    </IconTemplate>
-</Button>
-<br />
+<div class="button-state">
+    <h3 class="button-title">Active</h3>
+
+    <br />
+
+    <div class="button-type">
+        <h4>Solid</h4>
+
+        <br />
+
+        <InfButton LabelText="Button" />
+
+        <br />
+
+        <InfButton LabelText="Button">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+        <br />
+
+        <InfButton LabelText="Button" IconPosition="IconPosition.Right">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+        <br />
+
+        <InfButton>
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+    </div>
+
+    <div class="button-type">
+        <h4>Outlined</h4>
+
+        <br />
+
+        <InfButton LabelText="Button" FillMode="FillMode.Outline" />
+
+        <br />
+
+        <InfButton LabelText="Button" FillMode="FillMode.Outline">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+        <br />
+
+        <InfButton LabelText="Button" IconPosition="IconPosition.Right" FillMode="FillMode.Outline">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+        <br />
+
+        <InfButton FillMode="FillMode.Outline">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+    </div>
+
+    <div class="button-type">
+        <h4>Flat</h4>
+
+        <br />
+
+        <InfButton LabelText="Button" FillMode="FillMode.Flat" />
+
+        <br />
+
+        <InfButton LabelText="Button" FillMode="FillMode.Flat">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+        <br />
+
+        <InfButton LabelText="Button" IconPosition="IconPosition.Right" FillMode="FillMode.Flat">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+        <br />
+
+        <InfButton FillMode="FillMode.Flat">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+    </div>
+</div>
+
+<div class="button-state">
+    <h3 class="button-title">Disabled</h3>
+
+    <br />
+
+    <div class="button-type">
+        <h4>Solid</h4>
+
+        <br />
+
+        <InfButton LabelText="Button" Enabled="false" />
+
+        <br />
+
+        <InfButton LabelText="Button" Enabled="false">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+        <br />
+
+        <InfButton LabelText="Button" IconPosition="IconPosition.Right" Enabled="false">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+        <br />
+
+        <InfButton Enabled="false">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+    </div>
+
+    <div class="button-type">
+        <h4>Outlined</h4>
+
+        <br />
+
+        <InfButton LabelText="Button" FillMode="FillMode.Outline" Enabled="false" />
+
+        <br />
+
+        <InfButton LabelText="Button" FillMode="FillMode.Outline" Enabled="false">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+        <br />
+
+        <InfButton LabelText="Button" IconPosition="IconPosition.Right" FillMode="FillMode.Outline" Enabled="false">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+        <br />
+
+        <InfButton FillMode="FillMode.Outline" Enabled="false">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+    </div>
+
+    <div class="button-type">
+        <h4>Flat</h4>
+
+        <br />
 
 
-<Button LabelText="Outlined Button" FillMode="FillMode.Outline" >
-</Button>
-<br />
-<Button LabelText="Outlined Button" FillMode="FillMode.Outline" IconPosition="IconPosition.Right">
-    <IconTemplate>
-        <PrintIcon />
-    </IconTemplate>
-</Button>
-<br />
-<Button LabelText="Outlined Button" FillMode="FillMode.Outline" IconPosition="IconPosition.Left">
-    <IconTemplate>
-        <SearchIcon />
-    </IconTemplate>
-</Button>
-<br />
-<Button FillMode="FillMode.Outline" IconPosition="IconPosition.Right">
-    <IconTemplate>
-        <AddIcon />
-    </IconTemplate>
-</Button>
-<br />
-<Button LabelText="Outlined Button" FillMode="FillMode.Outline" IconPosition="IconPosition.Right" Enabled="false">
-    <IconTemplate>
-        <AddIcon />
-    </IconTemplate>
-</Button>
-<br />
+        <InfButton LabelText="Button" FillMode="FillMode.Flat" Enabled="false" />
 
-<Button LabelText="Flat Button" FillMode="FillMode.Flat">
-</Button>
-<br />
-<Button LabelText="Flat Button" FillMode="FillMode.Flat" IconPosition="IconPosition.Right">
-    <IconTemplate>
-        <AddIcon />
-    </IconTemplate>
-</Button>
-<br />
-<Button LabelText="Flat Button" FillMode="FillMode.Flat" IconPosition="IconPosition.Left">
-    <IconTemplate>
-        <AddIcon />
-    </IconTemplate>
-</Button>
-<br />
-<Button FillMode="FillMode.Flat" IconPosition="IconPosition.Right">
-    <IconTemplate>
-        <AddIcon />
-    </IconTemplate>
-</Button>
-<br />
-<Button LabelText="Flat Button" FillMode="FillMode.Flat" IconPosition="IconPosition.Right" Enabled="false">
-    <IconTemplate>
-        <AddIcon />
-    </IconTemplate>
-</Button>
-<br />
+        <br />
+
+        <InfButton LabelText="Button" FillMode="FillMode.Flat" Enabled="false">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+        <br />
+
+        <InfButton LabelText="Button" IconPosition="IconPosition.Right" FillMode="FillMode.Flat" Enabled="false">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+
+        <br />
+
+        <InfButton FillMode="FillMode.Flat" Enabled="false">
+            <IconTemplate>
+                <AddIcon />
+            </IconTemplate>
+        </InfButton>
+    </div>
+</div>
+
+<style>
+    .button-state {
+        display: flex;
+        gap: 50px;
+    }
+
+    .button-title {
+        width: 150px;
+    }
+
+    .button-type {
+        margin-bottom: 50px;
+    }
+</style>

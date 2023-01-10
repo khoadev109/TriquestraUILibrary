@@ -22,7 +22,12 @@ If the target Blazor project is a Razor Library:
 
 ```
 <link href="_content/Infinity.Blazor.UIControls/infinity-blazor-uicontrols.css" rel="stylesheet" />
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800' rel='stylesheet' />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Symbols+Outlined" rel="stylesheet">
 ```
+
 
 Also add to the same `index.html` file the `<link ... />` for the javascript and stylesheets needed for Telerik to work, usually:
 - https://blazor.cdn.telerik.com/blazor/`<version>`/telerik-blazor.min.js

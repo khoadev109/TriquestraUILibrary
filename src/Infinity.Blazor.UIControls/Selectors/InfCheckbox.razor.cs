@@ -2,7 +2,7 @@
 
 namespace Infinity.Blazor.UIControls.Selectors;
 
-partial class Checkbox
+partial class InfCheckbox
 {
     [Parameter]
     public bool Enabled { get; set; } = true;

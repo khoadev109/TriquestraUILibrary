@@ -1,4 +1,6 @@
-﻿<TelerikProgressBar Class="triquestra-progress-bar-line"
+﻿@inherits ProgressBar
+
+<TelerikProgressBar Class="triquestra-progress-bar-line"
                     Value="@Value"
                     Max="@Max">
     <ProgressBarLabel Visible="true">
@@ -6,7 +8,7 @@
             <div class="triquestra-progress-bar-line-wrapper" style="width: @Width">
                 <div class="triquestra-progress-bar-line-bar">
                     <div class="triquestra-progress-bar-line-progressed"
-                         style="background-color: @ColorCssClass;
+                         style="background-color: @BarColorCssClass;
                                 width: @($"{context.Value}%")">
                     </div>
                 </div>
